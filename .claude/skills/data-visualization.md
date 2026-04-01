@@ -107,6 +107,29 @@ const jobsProgress = showBars
 - **Contrast transitions** ("But..." moments): use a 5-frame opacity cross-fade between visual states.
 - **Hold the final state** for at least 1.5 seconds after the last animation so the viewer can absorb it.
 
+## Visual Variety Rule
+
+**Track which viz types you've used across the video.** Before choosing a viz for a new scene, check what's already been used. Aim for maximum variety:
+
+- Never use the same viz type in back-to-back scenes
+- If a viz type has been used twice, strongly prefer a different type unless it's genuinely the only option
+- In a 6-scene video, aim for 5+ distinct visual types
+- Remember you have MORE than just charts: ChoroplethMap, AnimatedTimeline, headline screenshots, YouTube clips, Wikimedia photos, custom scenes with progress bars or paycheck graphics
+
+**Visual type inventory** — check off as you assign them:
+- [ ] StatCard (big number)
+- [ ] AnimatedBarChart
+- [ ] AnimatedLineChart
+- [ ] ComparisonChart (horizontal bars)
+- [ ] ChoroplethMap (colored map)
+- [ ] AnimatedTimeline (chronological events)
+- [ ] Headline screenshot (news article with yellow highlight)
+- [ ] YouTube clip (interview/footage)
+- [ ] Photo with Ken Burns (Wikimedia historical image)
+- [ ] Custom viz (progress bar, paycheck graphic, flowchart, dot grid)
+
+If you've checked fewer than 5 types in a 6-scene video, reconsider your choices.
+
 ## Choosing the "Coolest" Visualization
 
 When the data could work with multiple viz types, follow this decision process:
