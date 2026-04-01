@@ -1,4 +1,5 @@
 import "dotenv/config";
+import { createInterface } from "readline";
 import { runAgent } from "./agent.js";
 
 const prompt = process.argv.slice(2).join(" ");
@@ -9,4 +10,13 @@ if (!prompt) {
   process.exit(1);
 }
 
-await runAgent(prompt);
+const rl = createInterface({ input: process.stdin, output: process.stdout });
+
+function askUser(question: string): Promise<string> {
+  return new Promise((resolve) => {
+    rl.question(question, (answer) => resolve(answer));
+  });
+}
+
+await runAgent(prompt, askUser);
+rl.close();
