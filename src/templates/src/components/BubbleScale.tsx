@@ -43,8 +43,8 @@ export const BubbleScale: React.FC<Props> = ({
   // Maximum radius: constrained by available height and width
   const maxAvailableHeight =
     (tokens.layout.height - (title ? 320 : 220)) / 2;
-  const maxRadiusByWidth = chartWidth / (sorted.length * 2.4);
-  const maxRadius = Math.min(maxAvailableHeight, maxRadiusByWidth, 200);
+  const maxRadiusByWidth = chartWidth / (sorted.length * 2.2);
+  const maxRadius = Math.min(maxAvailableHeight, maxRadiusByWidth, 240);
 
   // Calculate actual radii
   const radii = sorted.map((d) => (Math.sqrt(d.value) / sqrtMax) * maxRadius);
@@ -54,7 +54,7 @@ export const BubbleScale: React.FC<Props> = ({
   const bubbleBaseline = centerY + maxRadius * 0.4;
 
   // Calculate total width needed and center the group
-  const bubbleSpacing = 24;
+  const bubbleSpacing = 16;
   const totalWidth =
     radii.reduce((sum, r) => sum + r * 2, 0) +
     (sorted.length - 1) * bubbleSpacing;
@@ -235,13 +235,13 @@ export const BubbleScale: React.FC<Props> = ({
             <div
               style={{
                 position: "absolute",
-                left: cx - 80,
-                top: bubbleBaseline + (valueInside ? 12 : 34),
-                width: 160,
+                left: cx - 90,
+                top: bubbleBaseline + (valueInside ? 14 : 36),
+                width: 180,
                 textAlign: "center" as const,
-                fontSize: labelFontSize,
-                fontWeight: tokens.fontWeights.medium,
-                color: tokens.colors.textMuted,
+                fontSize: Math.max(16, labelFontSize),
+                fontWeight: tokens.fontWeights.semibold,
+                color: tokens.colors.text,
                 opacity: valueOpacity,
                 transform: `translateY(${valueSlide}px)`,
                 lineHeight: 1.3,
