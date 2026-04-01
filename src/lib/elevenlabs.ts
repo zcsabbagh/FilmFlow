@@ -17,7 +17,8 @@ export type SpeechWithTimingResult = {
 export async function generateSpeech(
   text: string,
   apiKey: string,
-  voiceId = "21m00Tcm4TlvDq8ikWAM" // Rachel — default narrator voice
+  voiceId = "21m00Tcm4TlvDq8ikWAM", // Rachel — default narrator voice
+  model: "eleven_multilingual_v2" | "eleven_v3" = "eleven_multilingual_v2"
 ): Promise<SpeechResult> {
   const res = await fetch(
     `https://api.elevenlabs.io/v1/text-to-speech/${voiceId}`,
@@ -29,7 +30,7 @@ export async function generateSpeech(
       },
       body: JSON.stringify({
         text,
-        model_id: "eleven_multilingual_v2",
+        model_id: model,
         voice_settings: {
           stability: 0.5,
           similarity_boost: 0.75,
@@ -54,7 +55,8 @@ export async function generateSpeech(
 export async function generateSpeechWithTiming(
   text: string,
   apiKey: string,
-  voiceId = "21m00Tcm4TlvDq8ikWAM"
+  voiceId = "21m00Tcm4TlvDq8ikWAM",
+  model: "eleven_multilingual_v2" | "eleven_v3" = "eleven_multilingual_v2"
 ): Promise<SpeechWithTimingResult> {
   const res = await fetch(
     `https://api.elevenlabs.io/v1/text-to-speech/${voiceId}/with-timestamps`,
@@ -66,7 +68,7 @@ export async function generateSpeechWithTiming(
       },
       body: JSON.stringify({
         text,
-        model_id: "eleven_multilingual_v2",
+        model_id: model,
         voice_settings: {
           stability: 0.5,
           similarity_boost: 0.75,

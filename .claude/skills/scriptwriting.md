@@ -87,6 +87,30 @@ Never end with "and that's why X is important." End with a line that makes the v
 - **Active voice.** "The city built 3,000 units" not "3,000 units were built by the city."
 - **Present tense** for ongoing situations. Past tense only for completed historical events.
 
+## Emotional Delivery with Audio Tags (v3)
+
+When using ElevenLabs v3 (`model: "v3"` in `generate_voiceover`), you can embed audio tags inline in the narration text to control emotional delivery. These are bracketed cues that the TTS engine interprets as performance directions.
+
+**Available tags:** `[sighs]`, `[excited]`, `[whispers]`, `[sad]`, `[laughs]`, `[serious]`, `[curious]`, `[angry]`, `[pause]`
+
+**When to use each tag:**
+- `[pause]` — before shocking stats or numbers that need to land. Gives the viewer a beat to absorb.
+- `[serious]` — for human cost sections and gravity moments. Sets a deliberate, weighted tone.
+- `[sighs]` — at "and yet..." turns, when the script pivots to something frustrating or absurd.
+- `[curious]` — for "here's the thing" moments, when introducing a surprising angle.
+- `[whispers]` — sparingly, for conspiratorial asides or dramatic effect.
+
+**Rules:**
+- Tags go INLINE in the narration text, not as metadata or separate instructions.
+- Max 3-4 tags per scene — don't overuse. Let the writing carry most of the emotion.
+- Never stack tags back-to-back (`[serious] [pause]` is fine, but `[serious] [sad] [sighs]` is too much).
+- `[pause]` is the most useful tag. Use it to create breathing room before key numbers.
+
+**Example:**
+```
+[serious] The federal minimum wage [pause] is seven dollars and twenty-five cents. [sighs] It has not changed in sixteen years.
+```
+
 ## Using Word-Level Timing
 
 After generating the voiceover with `generate_voiceover`, you get word-level timing data. Use this to sync animations:
