@@ -107,6 +107,29 @@ const jobsProgress = showBars
 - **Contrast transitions** ("But..." moments): use a 5-frame opacity cross-fade between visual states.
 - **Hold the final state** for at least 1.5 seconds after the last animation so the viewer can absorb it.
 
+### Motion Design Principles (Gap: 3/10 vs Real Vox)
+
+Real Vox uses multi-layered, physically-inspired motion. Our current animations are too simple (basic fades and grows). To close the gap:
+
+**Layer every frame.** Never have a blank background. Use:
+- Faded background photo from Wikimedia (opacity 0.1-0.15, grayscale)
+- Subtle grid overlay (60px grid, opacity 0.2-0.3) for texture
+- Diagonal hash lines (opacity 0.03) for depth
+
+**Asymmetric layouts.** Don't center everything. Place the main element left-aligned at ~58% width, with supporting context on the right. This creates visual hierarchy.
+
+**Multi-stage reveals per element:**
+1. Scale from 0.85→1.0 (subtle size change)
+2. Opacity from 0→1 (fade in)
+3. Slide from 15px→0 in Y (lift into position)
+All three happening simultaneously over 15-20 frames.
+
+**Accent lines and separators.** After a number appears, draw a thin horizontal line (2px, accent color) underneath using spring animation. This creates a visual "underline" moment.
+
+**Dim and shift focus.** When a new element appears, dim the previous one to 0.2 opacity. This creates a spotlight effect — the viewer's eye is always guided.
+
+**Easing matters.** Always use `Easing.out(Easing.cubic)` for slides, `spring()` for scales. Never use linear interpolation for any visual motion.
+
 ## Visual Variety Rule
 
 **Track which viz types you've used across the video.** Before choosing a viz for a new scene, check what's already been used. Aim for maximum variety:
