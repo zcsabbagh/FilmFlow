@@ -7,6 +7,7 @@ import { youtubeSearchTool } from "./tools/research/youtube-search.js";
 import { youtubeTranscriptTool } from "./tools/research/youtube-transcript.js";
 import { datasetSearchTool } from "./tools/research/dataset-search.js";
 import { scrapeTableTool } from "./tools/research/scrape-table.js";
+import { wikimediaImageTool } from "./tools/research/wikimedia-image.js";
 
 // Visual search tools
 import { indexVideoTool } from "./tools/visual-search/index-video.js";
@@ -85,6 +86,7 @@ function getSharedOptions() {
       youtubeTranscriptTool,
       datasetSearchTool,
       scrapeTableTool,
+      wikimediaImageTool,
       // Visual search
       indexVideoTool,
       visualSearchTool,
