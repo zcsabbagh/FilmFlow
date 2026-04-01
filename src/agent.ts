@@ -9,6 +9,9 @@ import { datasetSearchTool } from "./tools/research/dataset-search.js";
 import { scrapeTableTool } from "./tools/research/scrape-table.js";
 import { wikimediaImageTool } from "./tools/research/wikimedia-image.js";
 import { headlineScreenshotTool } from "./tools/research/headline-screenshot.js";
+import { pexelsSearchTool, pexelsDownloadTool } from "./tools/research/pexels.js";
+import { pixabaySearchTool } from "./tools/research/pixabay.js";
+import { locSearchTool, locDownloadTool } from "./tools/research/loc.js";
 
 // Visual search tools
 import { indexVideoTool } from "./tools/visual-search/index-video.js";
@@ -69,6 +72,11 @@ function getSharedOptions() {
       scrapeTableTool,
       wikimediaImageTool,
       headlineScreenshotTool,
+      pexelsSearchTool,
+      pexelsDownloadTool,
+      pixabaySearchTool,
+      locSearchTool,
+      locDownloadTool,
       // Visual search
       indexVideoTool,
       visualSearchTool,
