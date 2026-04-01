@@ -1,5 +1,4 @@
 import { query, createSdkMcpServer } from "@anthropic-ai/claude-agent-sdk";
-import type { SDKUserMessage } from "@anthropic-ai/claude-agent-sdk";
 import { mkdirSync } from "fs";
 import { join } from "path";
 
@@ -77,10 +76,7 @@ Use create_data_viz with these templates for consistent, animated visualizations
 
 type AskUserFn = (question: string) => Promise<string>;
 
-export async function runAgent(prompt: string, askUser: AskUserFn) {
-  const outputDir = join(process.cwd(), "output");
-  mkdirSync(outputDir, { recursive: true });
-
+function getSharedOptions() {
   const filmflowTools = createSdkMcpServer({
     name: "filmflow-tools",
     tools: [
@@ -107,53 +103,90 @@ export async function runAgent(prompt: string, askUser: AskUserFn) {
     ],
   });
 
-  function makeUserMessage(text: string): SDKUserMessage {
-    return {
-      type: "user",
-      message: { role: "user", content: text },
-      parent_tool_use_id: null,
-    };
-  }
-
-  // Streaming input: yields the initial prompt
-  async function* inputStream(): AsyncGenerator<SDKUserMessage> {
-    yield makeUserMessage(prompt);
-  }
-
-  const q = query({
-    prompt: inputStream(),
-    options: {
-      systemPrompt: SYSTEM_PROMPT,
-      cwd: process.cwd(),
-      allowedTools: [
-        "Read", "Write", "Edit", "Bash", "Glob", "Grep",
-        "WebSearch", "WebFetch", "AskUserQuestion",
-      ],
-      mcpServers: {
-        "filmflow-tools": filmflowTools,
-      },
-      permissionMode: "bypassPermissions",
-      allowDangerouslySkipPermissions: true,
-      maxTurns: 200,
+  return {
+    systemPrompt: SYSTEM_PROMPT,
+    cwd: process.cwd(),
+    allowedTools: [
+      "Read", "Write", "Edit", "Bash", "Glob", "Grep",
+      "WebSearch", "WebFetch",
+    ],
+    mcpServers: {
+      "filmflow-tools": filmflowTools,
     },
-  });
+    permissionMode: "bypassPermissions" as const,
+    allowDangerouslySkipPermissions: true,
+    maxTurns: 200,
+  };
+}
 
-  for await (const message of q) {
+async function runQuery(prompt: string, options: ReturnType<typeof getSharedOptions> & { resume?: string }): Promise<string | undefined> {
+  let sessionId: string | undefined;
+
+  for await (const message of query({ prompt, options })) {
+    // Capture session ID from init message
+    if (message.type === "system" && message.subtype === "init") {
+      sessionId = message.session_id;
+    }
     if ("result" in message) {
       console.log(message.result);
-
-      // After the agent finishes a turn, ask user for follow-up
-      const response = await askUser("\n> ");
-      if (response.toLowerCase() === "exit" || response.toLowerCase() === "quit") {
-        q.close();
-        break;
-      }
-      // Send user's response back to the agent
-      await q.streamInput(
-        (async function* (): AsyncGenerator<SDKUserMessage> {
-          yield makeUserMessage(response);
-        })()
-      );
     }
+  }
+
+  return sessionId;
+}
+
+export async function runAgent(prompt: string, askUser: AskUserFn) {
+  const outputDir = join(process.cwd(), "output");
+  mkdirSync(outputDir, { recursive: true });
+
+  const options = getSharedOptions();
+
+  // First turn: send the initial prompt
+  console.log("\n🎬 FilmFlow — starting...\n");
+  const sessionId = await runQuery(prompt, options);
+
+  if (!sessionId) {
+    console.error("Failed to get session ID");
+    return;
+  }
+
+  console.log(`\n📎 Session: ${sessionId}\n`);
+
+  // Interactive loop: resume the session with user follow-ups
+  while (true) {
+    const response = await askUser("\n> ");
+    const trimmed = response.trim().toLowerCase();
+
+    if (trimmed === "exit" || trimmed === "quit" || trimmed === "") {
+      console.log("👋 Done.");
+      break;
+    }
+
+    // Resume the same session with the user's follow-up
+    await runQuery(response, { ...options, resume: sessionId });
+  }
+}
+
+/**
+ * Resume a previous session by ID.
+ * Usage: filmflow --resume <session-id> "your follow-up message"
+ */
+export async function resumeAgent(sessionId: string, prompt: string, askUser: AskUserFn) {
+  const options = getSharedOptions();
+
+  console.log(`\n🎬 FilmFlow — resuming session ${sessionId}...\n`);
+  await runQuery(prompt, { ...options, resume: sessionId });
+
+  // Interactive loop
+  while (true) {
+    const response = await askUser("\n> ");
+    const trimmed = response.trim().toLowerCase();
+
+    if (trimmed === "exit" || trimmed === "quit" || trimmed === "") {
+      console.log("👋 Done.");
+      break;
+    }
+
+    await runQuery(response, { ...options, resume: sessionId });
   }
 }
