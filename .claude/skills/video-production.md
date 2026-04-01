@@ -1,0 +1,133 @@
+# Video Production Skill
+
+End-to-end workflow for producing a FilmFlow explainer video. This skill orchestrates the full pipeline from prompt to final MP4.
+
+## Production Pipeline
+
+```
+PLAN → SCRIPT → VOICEOVER → VISUALS → ASSEMBLE → RENDER → CRITIQUE → ITERATE
+```
+
+Follow each phase in order. Do not skip ahead.
+
+## Phase 1: PLAN (Research & Storyboard)
+
+1. **Research the topic thoroughly**
+   - `web_search` — find key facts, recent news, expert opinions
+   - `youtube_search` + `youtube_transcript` — find source videos, extract quotes and context
+   - `dataset_search` — find quantitative data for visualizations
+   - `scrape_table` — extract data tables from Wikipedia, government sites
+   - `fetch_wikimedia_image` — find historical photos (public domain)
+
+2. **Write the storyboard**
+   - Follow the scriptwriting skill for the narration
+   - For each scene, specify: narration text, visual type, data source, duration estimate
+   - Present the storyboard to the user and WAIT for approval
+
+## Phase 2: SCRIPT & VOICEOVER
+
+For each scene in the approved storyboard:
+
+1. **Finalize the narration text** — clean, speakable prose (see scriptwriting skill)
+2. **Generate voiceover** with `generate_voiceover`
+   - This returns word-level timing data (`.timing.json`)
+   - Read the timing file to learn the exact duration and when each word is spoken
+3. **Calculate scene duration** — use `durationFrames` from the voiceover result, add 30 frames (1 second) of padding at the end
+
+**Critical:** Generate ALL voiceovers before building any visuals. You need the exact timing to sync animations.
+
+## Phase 3: VISUALS
+
+For each scene, decide the visual approach based on the storyboard:
+
+### Data Visualization Scenes
+1. **Prepare the data:** `process_dataset` or `scrape_table` → clean JSON
+2. **Choose the viz type** following the data-visualization skill
+3. **Create the scene** with `create_data_viz` (for template-based) or `create_scene` (for custom TSX)
+4. **Sync to voiceover:** Read the `.timing.json` file. Set animation start frames to match when the narrator mentions each data point.
+
+### YouTube Clip Scenes
+1. **Find the right video:** `youtube_search` for the topic
+2. **Find the right moment:** `youtube_transcript` to search captions for relevant quotes
+3. **Optional — visual search:** If you need a specific visual (not just a quote), use `index_video` then `visual_search`
+4. **Clip it:** `clip_youtube_video` with the start/end timestamps
+5. **Create a scene** that displays the clip with a Remotion `<Video>` component, plus lower-third text overlay
+
+### Photo/Image Scenes
+1. **Find the image:** `fetch_wikimedia_image` for historical photos, or use user-provided assets
+2. **Create a scene** with the image displayed using Remotion's `<Img>` component
+3. Apply Ken Burns effect (slow zoom/pan) for static images
+
+### Headline Screenshot Scenes
+1. **Find the article:** `web_search` to find a relevant news article URL
+2. **Screenshot it:** `screenshot_headline` with the key phrase highlighted
+3. **Create a scene** that displays the screenshot with a zoom-in animation
+
+### Title Card Scenes
+Write a custom scene with `create_scene`:
+- Large serif title text (Playfair Display)
+- Subtitle in sans-serif (Source Sans 3)
+- Warm paper background
+- Fade-in animation
+
+## Phase 4: ASSEMBLE
+
+1. **List all scenes in order** with their durations (from voiceover timing)
+2. **Add audio paths** — each scene's voiceover MP3 file
+3. **Call `add_to_timeline`** with the complete scene list
+   - Scene filenames (without extension)
+   - Duration in frames (from voiceover `durationFrames` + padding)
+   - Audio paths (relative to `public/`)
+
+## Phase 5: RENDER & CRITIQUE
+
+1. **Preview key frames** — `preview_scene` at the midpoint of each scene to verify visuals
+2. **Render the full video** — `render_video` → MP4
+3. **Critique** — `critique_video` sends the MP4 to Gemini for review
+4. **Evaluate scores:**
+   - All categories ≥ 7: **Ship it.** Present the final video to the user.
+   - Any category < 7: **Fix and re-render.** Read Gemini's notes, fix the weakest scenes, re-render.
+   - Max 3 critique-fix iterations. After 3, present what you have with the scores.
+
+## Project Setup
+
+Every video gets its own Remotion project:
+
+1. **Copy the template:** `cp -r src/templates output/<video-slug>`
+2. **Install deps:** `cd output/<video-slug> && bun install`
+3. **Create scenes** in `output/<video-slug>/src/scenes/`
+4. **Assets go in** `output/<video-slug>/public/` (clips/, audio/, images/, data/)
+5. **Entry point** is `src/index.ts` (already has `registerRoot`)
+6. **Render with** `npx remotion render src/index.ts Root out/video.mp4`
+
+## Pacing Guidelines
+
+| Scene Type | Target Duration | Frames (30fps) |
+|-----------|----------------|-----------------|
+| Hook / title | 15-20s | 450-600 |
+| Data viz | 20-35s | 600-1050 |
+| YouTube clip | 10-20s | 300-600 |
+| Photo with narration | 10-15s | 300-450 |
+| Headline screenshot | 5-10s | 150-300 |
+| Closing | 10-15s | 300-450 |
+| **Total target** | **2:30 - 4:00** | **4500-7200** |
+
+## Scene Transitions
+
+Between scenes, allow a brief pause:
+- Add 15-30 frames of padding between scenes (0.5-1 second)
+- Fade-out the current scene in the last 10 frames (opacity interpolation)
+- Fade-in the next scene in the first 10 frames
+- This creates a gentle dissolve effect
+
+## Checklist Before Rendering
+
+- [ ] All voiceovers generated with word-level timing
+- [ ] All data downloaded and processed
+- [ ] All YouTube clips downloaded
+- [ ] All scenes created and reference correct data/audio paths
+- [ ] Root.tsx updated with all scenes via `add_to_timeline`
+- [ ] Entry point (`src/index.ts`) has `registerRoot`
+- [ ] `bun install` run in the project directory
+- [ ] Font files present in `public/fonts/`
+- [ ] TopoJSON data present in `public/data/` (if using maps)

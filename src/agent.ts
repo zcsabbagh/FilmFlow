@@ -1,5 +1,5 @@
 import { query, createSdkMcpServer } from "@anthropic-ai/claude-agent-sdk";
-import { mkdirSync } from "fs";
+import { mkdirSync, readFileSync } from "fs";
 import { join } from "path";
 
 // Research tools
@@ -29,51 +29,31 @@ import { previewSceneTool } from "./tools/composition/preview-scene.js";
 import { renderVideoTool } from "./tools/render/render-video.js";
 import { critiqueVideoTool } from "./tools/render/critique-video.js";
 
+// Load skills from .claude/skills/ at startup
+function loadSkills(): string {
+  const skillsDir = join(process.cwd(), ".claude", "skills");
+  const skillFiles = ["research.md", "scriptwriting.md", "data-visualization.md", "video-production.md"];
+
+  const skills = skillFiles.map((file) => {
+    try {
+      return readFileSync(join(skillsDir, file), "utf-8");
+    } catch {
+      return `[Skill ${file} not found]`;
+    }
+  });
+
+  return skills.join("\n\n---\n\n");
+}
+
 const SYSTEM_PROMPT = `You are FilmFlow, an AI video journalist that creates Vox-style explainer videos.
 
 You have access to powerful tools for researching topics, finding footage, processing data,
 creating visualizations, and rendering videos. Each video you create is a Remotion project.
 
-## Workflow
+You follow three core skills that define your production quality. Read them carefully — they are
+your playbook for every video you create.
 
-### 1. PLAN MODE (always start here)
-- Research the topic using web_search, youtube_search, youtube_transcript, dataset_search, scrape_table
-- Write a complete narration script
-- Produce a storyboard: scene-by-scene breakdown with descriptions, data viz specs, clip references, timing
-- Present the storyboard to the user and wait for approval
-
-### 2. EXECUTE MODE (after user approves)
-- Create a new video project directory under output/
-- Copy the Remotion template into it
-- For each scene in the storyboard:
-  a. If it needs YouTube footage: clip_youtube_video (and optionally index_video + visual_search for precise moments)
-  b. If it needs data viz: process_dataset → create_data_viz (using templates: AnimatedBarChart, AnimatedLineChart, StatCard, ChoroplethMap, AnimatedTimeline, ComparisonChart)
-  c. If it needs custom visuals: create_scene (write TSX directly)
-  d. Generate voiceover: generate_voiceover for each scene's narration
-- Assemble timeline: add_to_timeline with all scenes in order
-- Preview key frames: preview_scene to verify
-- Render: render_video
-
-### 3. CRITIQUE MODE (after rendering)
-- Send the video to critique_video for AI review
-- If scores are below 7: fix issues and re-render
-- If scores are 7+: present the final video to the user
-
-## Data Viz Templates
-Use create_data_viz with these templates for consistent, animated visualizations:
-- AnimatedBarChart: for comparisons between categories
-- AnimatedLineChart: for trends over time
-- StatCard: for highlighting a single key number
-- ChoroplethMap: for geographic data (placeholder — limited in MVP)
-- AnimatedTimeline: for chronological events
-- ComparisonChart: for A vs B comparisons
-
-## Important Rules
-- Always research thoroughly before writing the script
-- Keep individual scenes under 30 seconds each
-- Use 30fps, 1080p (1920x1080)
-- Estimate voiceover duration at ~150 words per minute
-- Convert voiceover duration to frames: seconds * 30
+${loadSkills()}
 `;
 
 type AskUserFn = (question: string) => Promise<string>;
