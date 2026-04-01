@@ -1,0 +1,20 @@
+{
+  "timestamp": "2026-04-01T13:20:00Z",
+  "method": "comparative_against_real_vox",
+  "vox_reference": "Why all world maps are wrong (kIID5FDi2JQ) — first 60s",
+  "our_video": "sf-housing-crisis-v7",
+  "scores": {
+    "motion_design": 3,
+    "visual_density": 2,
+    "color_typography": 5,
+    "narrative_rhythm": 4,
+    "production_polish": 3,
+    "overall": 3
+  },
+  "average": 3.3,
+  "top_improvements": [
+    "Complex motion design — multi-layered animations that explain concepts, not just data reveals",
+    "Visual density — diagrams, icons, imagery, metaphors alongside charts",
+    "Consistent polish — seamless transitions, branded media integration"
+  ]
+}
