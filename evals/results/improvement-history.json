@@ -1,0 +1,17 @@
+[
+  {
+    "timestamp": "2026-04-01T13:15:00Z",
+    "iteration": 1,
+    "video": "sf-housing-crisis-v7",
+    "critique": {
+      "pacing": { "score": 9, "notes": "No visual is static for too long" },
+      "visual_coherence": { "score": 9, "notes": "Strong Vox-style coherence" },
+      "data_accuracy": { "score": 8, "notes": "$500K label mismatch on line chart" },
+      "audio_sync": { "score": 10, "notes": "Perfectly synchronized" },
+      "overall": { "score": 9, "notes": "Highly professional video journalism" }
+    },
+    "averageScore": 9.0,
+    "weakestArea": "data_accuracy",
+    "improvements": ["Voice-synced choreography for all 6 scenes", "Ring charts for percentage comparison", "Progress bar for 9% stat", "YouTube interview clip integration"]
+  }
+]
