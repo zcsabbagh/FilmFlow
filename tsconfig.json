@@ -12,5 +12,5 @@
     "types": ["bun-types"]
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist", "output", "tests"]
+  "exclude": ["node_modules", "dist", "output", "tests", "src/templates"]
 }
