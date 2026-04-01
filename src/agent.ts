@@ -2,25 +2,31 @@ import { query, createSdkMcpServer } from "@anthropic-ai/claude-agent-sdk";
 import { mkdirSync, readFileSync } from "fs";
 import { join } from "path";
 
-// Research tools
-import { youtubeSearchTool } from "./tools/research/youtube-search.js";
-import { youtubeTranscriptTool } from "./tools/research/youtube-transcript.js";
-import { datasetSearchTool } from "./tools/research/dataset-search.js";
-import { scrapeTableTool } from "./tools/research/scrape-table.js";
-import { wikimediaImageTool } from "./tools/research/wikimedia-image.js";
-import { headlineScreenshotTool } from "./tools/research/headline-screenshot.js";
-import { pexelsSearchTool, pexelsDownloadTool } from "./tools/research/pexels.js";
-import { pixabaySearchTool } from "./tools/research/pixabay.js";
-import { locSearchTool, locDownloadTool } from "./tools/research/loc.js";
+// Image tools
+import { pexelsSearchTool, pexelsDownloadTool } from "./tools/images/pexels.js";
+import { pixabaySearchTool } from "./tools/images/pixabay.js";
+import { wikimediaImageTool } from "./tools/images/wikimedia.js";
+import { locSearchTool, locDownloadTool } from "./tools/images/loc.js";
+import { headlineScreenshotTool } from "./tools/images/headline-screenshot.js";
+
+// Video tools
+import { youtubeSearchTool } from "./tools/video/youtube-search.js";
+import { youtubeTranscriptTool } from "./tools/video/youtube-transcript.js";
+import { clipYoutubeTool } from "./tools/video/clip-youtube.js";
 
 // Visual search tools
-import { indexVideoTool } from "./tools/visual-search/index-video.js";
-import { visualSearchTool } from "./tools/visual-search/visual-search.js";
+import { indexVideoTool } from "./tools/video-search/index-video.js";
+import { visualSearchTool } from "./tools/video-search/visual-search.js";
 
-// Asset tools
-import { clipYoutubeTool } from "./tools/assets/clip-youtube.js";
-import { generateVoiceoverTool } from "./tools/assets/generate-voiceover.js";
-import { processDatasetTool } from "./tools/assets/process-dataset.js";
+// Data tools
+import { datasetSearchTool } from "./tools/data/dataset-search.js";
+import { scrapeTableTool } from "./tools/data/scrape-table.js";
+import { processDatasetTool } from "./tools/data/process-dataset.js";
+import { censusSearchTool } from "./tools/data/census.js";
+import { fredSearchTool } from "./tools/data/fred.js";
+
+// Audio tools
+import { generateVoiceoverTool } from "./tools/audio/generate-voiceover.js";
 
 // Composition tools
 import { createSceneTool } from "./tools/composition/create-scene.js";
@@ -65,25 +71,29 @@ function getSharedOptions() {
   const filmflowTools = createSdkMcpServer({
     name: "filmflow-tools",
     tools: [
-      // Research
-      youtubeSearchTool,
-      youtubeTranscriptTool,
-      datasetSearchTool,
-      scrapeTableTool,
-      wikimediaImageTool,
-      headlineScreenshotTool,
+      // Images
       pexelsSearchTool,
       pexelsDownloadTool,
       pixabaySearchTool,
+      wikimediaImageTool,
       locSearchTool,
       locDownloadTool,
+      headlineScreenshotTool,
+      // Video
+      youtubeSearchTool,
+      youtubeTranscriptTool,
+      clipYoutubeTool,
       // Visual search
       indexVideoTool,
       visualSearchTool,
-      // Assets
-      clipYoutubeTool,
-      generateVoiceoverTool,
+      // Data
+      datasetSearchTool,
+      scrapeTableTool,
       processDatasetTool,
+      censusSearchTool,
+      fredSearchTool,
+      // Audio
+      generateVoiceoverTool,
       // Composition
       createSceneTool,
       createDataVizTool,
