@@ -2,19 +2,50 @@
 
 Design animated data visualizations in the Vox editorial style. This skill is used during EXECUTE MODE when choosing and configuring visualizations for each scene.
 
-## Visualization Selection
+## Visualization Selection — THINK CREATIVELY
 
-Match the data type to the right viz. Never use a complex viz when a simple one works.
+**WARNING: Do NOT fall back on the same 6 templates for every video.** The biggest failure mode is producing videos that all look identical — StatCard hook → LineChart → BarChart → ComparisonChart → Map → Closing. If your scene sequence looks like that, START OVER.
 
-| Data Pattern | Best Viz | Example |
-|-------------|----------|---------|
-| Single key number | **StatCard** | "$1.3M median home price" |
-| Comparing categories | **AnimatedBarChart** | "Housing prices by city" |
-| Trend over time | **AnimatedLineChart** | "Rent prices 2010-2024" |
-| A vs B comparison | **ComparisonChart** | "SF builds 3K vs Tokyo builds 140K" |
-| Chronological events | **AnimatedTimeline** | "History of housing policy" |
-| Geographic data | **ChoroplethMap** | "Swing states", "Most expensive states" |
-| Proportional comparison | **DotGrid** (use ComparisonChart) | "Texas vs Vermont population" |
+### The Template Trap
+
+The reusable components (StatCard, AnimatedBarChart, etc.) exist as building blocks, NOT as a menu to pick from. Real Vox invents a new visual concept for almost every scene. They might show:
+- A physical object being manipulated (a globe being cut, a dollar bill being torn)
+- A diagram that builds step by step (a flowchart, a process, a cause-and-effect chain)
+- Side-by-side panels that reveal simultaneously
+- An animated map with arrows and annotations showing movement
+- A stack of items growing/shrinking to show scale
+- A clock or calendar visualization showing time passage
+- An isometric or 3D-style infographic
+- A "before and after" split-screen
+- Pictograms (rows of person icons, dollar icons, house icons)
+- Annotated screenshots of real documents, reports, legislation
+
+### How to Choose Visuals
+
+For each scene, ask: **"What VISUAL METAPHOR best explains this concept?"**
+
+NOT: "What chart type matches this data?"
+
+Examples:
+- "Healthcare costs tripled" → Don't use a bar chart. Show three stacked hospital bills, or a thermometer rising, or a receipt that keeps scrolling
+- "$7.25 frozen since 2009" → Don't use a StatCard. Show a block of ice with the number frozen inside, or a calendar flipping from 2009 to 2025 with the number staying static
+- "75% of land is single-family" → Don't use a pie chart. Show an aerial grid of SF where 3 out of 4 squares are colored as houses, or zoom into a map and shade the restricted zones
+- "6 jobs per 1 home" → Don't use a bar chart. Show 6 person icons walking toward 1 house icon, or show 6 office buildings next to 1 tiny house
+
+### Template Components Are Last Resort
+
+Use `create_scene` (custom TSX) for MOST scenes. Only fall back to template components when:
+- You're short on time and need a quick chart
+- The data genuinely is best shown as a standard chart (rare)
+- You're composing multiple small charts within a larger custom scene
+
+### Minimum Variety Rule
+
+In any video, you MUST have:
+- At least 2 scenes that are entirely custom (no template components)
+- No template component used more than once across the whole video
+- At least 1 scene using real-world imagery (photo, screenshot, video clip)
+- At least 1 scene using a visual metaphor (not a standard chart)
 
 ## The Vox Data Viz Aesthetic
 
@@ -132,26 +163,13 @@ All three happening simultaneously over 15-20 frames.
 
 ## Visual Variety Rule
 
-**Track which viz types you've used across the video.** Before choosing a viz for a new scene, check what's already been used. Aim for maximum variety:
+**Every video must feel visually unique.** If someone watches your housing video and minimum wage video back-to-back, they should NOT think "this looks like the same video with different numbers."
 
-- Never use the same viz type in back-to-back scenes
-- If a viz type has been used twice, strongly prefer a different type unless it's genuinely the only option
-- In a 6-scene video, aim for 5+ distinct visual types
-- Remember you have MORE than just charts: ChoroplethMap, AnimatedTimeline, headline screenshots, YouTube clips, Wikimedia photos, custom scenes with progress bars or paycheck graphics
-
-**Visual type inventory** — check off as you assign them:
-- [ ] StatCard (big number)
-- [ ] AnimatedBarChart
-- [ ] AnimatedLineChart
-- [ ] ComparisonChart (horizontal bars)
-- [ ] ChoroplethMap (colored map)
-- [ ] AnimatedTimeline (chronological events)
-- [ ] Headline screenshot (news article with yellow highlight)
-- [ ] YouTube clip (interview/footage)
-- [ ] Photo with Ken Burns (Wikimedia historical image)
-- [ ] Custom viz (progress bar, paycheck graphic, flowchart, dot grid)
-
-If you've checked fewer than 5 types in a 6-scene video, reconsider your choices.
+How to achieve this:
+- **Start with the topic's natural visual language.** Housing → buildings, blueprints, maps. Healthcare → human bodies, pills, hospital imagery. Wages → money, clocks, paychecks. Let the topic drive the aesthetic, not a template.
+- **Invent at least 2 scene types you've never used before.** Every video should push the visual vocabulary.
+- **Vary the composition.** Don't always put the big number top-left. Try center-screen, bottom-right, full-bleed, split-screen, text-only, image-only.
+- **Vary the animation style.** Not everything needs to spring in. Try: typewriter reveal, horizontal wipe, vertical stack-build, counter with blur, zoom from detail to wide.
 
 ## Choosing the "Coolest" Visualization
 
