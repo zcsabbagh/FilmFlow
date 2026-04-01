@@ -90,7 +90,16 @@ Built on the **Claude Agent SDK (TypeScript)**. Claude is the director — it or
 
 Built-in Agent SDK tools (`web_search`, `web_fetch`, `Read`, `Write`, `Bash`, `Glob`, `Grep`) are also available.
 
-#### 2. Asset Tools
+#### 2. Visual Search Tools (SentrySearch)
+
+Powered by [SentrySearch](https://github.com/ssrajadh/sentrysearch) — semantic search over video using Gemini Embedding 2. Enables finding visually relevant moments in footage beyond what transcripts capture.
+
+| Tool | Description | Implementation |
+|------|-------------|----------------|
+| `index_video` | Chunk and embed a downloaded video for semantic search | SentrySearch `index` via subprocess |
+| `visual_search` | Search indexed video for visually matching moments | SentrySearch `search` via subprocess |
+
+#### 3. Asset Tools
 
 | Tool | Description | Implementation |
 |------|-------------|----------------|
@@ -98,7 +107,7 @@ Built-in Agent SDK tools (`web_search`, `web_fetch`, `Read`, `Write`, `Bash`, `G
 | `generate_voiceover` | Generate narration audio from script text | ElevenLabs API |
 | `process_dataset` | Clean/transform/filter a dataset, output viz-ready JSON | Pandas via subprocess or Node data libs |
 
-#### 3. Composition Tools
+#### 4. Composition Tools
 
 | Tool | Description | Implementation |
 |------|-------------|----------------|
@@ -107,7 +116,7 @@ Built-in Agent SDK tools (`web_search`, `web_fetch`, `Read`, `Write`, `Bash`, `G
 | `add_to_timeline` | Add a scene to the video timeline with duration/transition | Updates `Root.tsx` composition |
 | `preview_scene` | Render a single scene to screenshot or short clip | Remotion `renderStill` / `renderMedia` |
 
-#### 4. Render & Critique Tools
+#### 5. Render & Critique Tools
 
 | Tool | Description | Implementation |
 |------|-------------|----------------|
@@ -208,6 +217,7 @@ Gemini returns structured feedback. The agent can then:
 | YouTube clipping | `yt-dlp` |
 | Voiceover | ElevenLabs API |
 | Dataset processing | Node.js data libs (or Python/Pandas subprocess) |
+| Visual video search | SentrySearch (Gemini Embedding 2 + ChromaDB) |
 | Self-critique | Gemini Video Understanding API |
 | Web scraping | Cheerio |
 
