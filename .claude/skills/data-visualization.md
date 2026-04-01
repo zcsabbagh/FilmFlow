@@ -41,11 +41,71 @@ Reference images are in `visualization-inspo/`. Key principles:
 - **Sharp corners** on bars (no border-radius)
 - **Call-out labels** for key data points — place the number right next to the peak/trough in large bold serif
 
-### Animation Principles
-- **Stagger entries.** Bars grow one by one (5 frame delay each). Lines draw progressively. Timeline events slide in sequentially.
-- **Spring physics** for natural motion. Use Remotion's `spring()` with `{ damping: 20, stiffness: 100 }`.
-- **Hold the final state.** After animation completes, hold for at least 2 seconds so the viewer can read.
-- **Sync to narration.** When the narrator says a number, that's when it should appear on screen.
+### Animation Principles: Voice-Synced Choreography
+
+**The #1 rule: every narration beat triggers a visual beat.** No static frames for more than 3 seconds.
+
+The `generate_voiceover` tool returns a `.timing.json` file with word-level frame numbers. You MUST read this file and use it to choreograph every visual change.
+
+**How to choreograph a scene:**
+
+1. Read the `.timing.json` for the scene
+2. Identify key phrases in the narration (numbers, transitions, key claims)
+3. Map each phrase to a visual action:
+   - When narrator says a number → that number animates on screen
+   - When narrator says "but" or a contrast → visual transition happens
+   - When narrator names a comparison → the comparison element appears
+4. Write the scene component using `useCurrentFrame()` with the exact frame numbers from the timing data
+
+**Example — "The jobs-housing mismatch" scene:**
+
+```
+Narration timing:                          Visual action:
+─────────────────────────────────────────────────────────
+frame 0:    "The consequences were slow"  → Title fades in
+frame 93:   "In the mid-nineties, a home" → Line chart starts drawing
+frame 179:  "three hundred thousand"       → "$300K" call-out appears at data point
+frame 249:  "By two thousand"              → Line draws to 2000 point
+frame 296:  "five hundred thousand"        → "$500K" call-out appears
+frame 356:  "Then the tech boom hit"       → Line accelerates through 2005-2016
+frame 430:  "the Bay Area added"           → CUT to bar chart, jobs bar starts growing
+frame 547:  "three hundred and seventy"    → Jobs bar reaches 373K, number appears
+frame 640:  "But it permitted only"        → Homes bar starts growing (much smaller)
+frame 670:  "fifty-eight thousand"         → Homes bar reaches 58K, number appears
+frame 732:  "That's six jobs"              → Large "6:1" call-out between the bars
+```
+
+**Implementation pattern:**
+
+```tsx
+// Read timing data at module level or via props
+const TIMING = {
+  lineStart: 93,        // "In the mid-nineties"
+  label300k: 179,       // "three hundred thousand"
+  label500k: 296,       // "five hundred thousand"
+  techBoom: 356,        // "Then the tech boom hit"
+  cutToBars: 430,       // "the Bay Area added"
+  jobsLand: 547,        // "three hundred and seventy-three"
+  homesStart: 640,      // "But it permitted only"
+  homesLand: 670,       // "fifty-eight thousand"
+  ratioCallout: 732,    // "That's six jobs"
+};
+
+// In the component, use frame-based conditions:
+const frame = useCurrentFrame();
+const showBars = frame >= TIMING.cutToBars;
+const jobsProgress = showBars
+  ? interpolate(frame, [TIMING.cutToBars, TIMING.jobsLand], [0, 1], { extrapolateRight: "clamp" })
+  : 0;
+```
+
+**Key rules:**
+- **NEVER use the template components as full-scene replacements.** The templates (AnimatedBarChart, etc.) are building blocks. Compose them inside custom scenes with `<Sequence>` blocks timed to the narration.
+- **Spring physics** for natural motion: `spring({ damping: 20, stiffness: 100 })`.
+- **Use `<Sequence from={frame}>` to orchestrate cuts** between different visual states within a scene.
+- **Call-out labels** (big serif numbers placed near data points) should fade+slide in over 10-15 frames using `interpolate()`.
+- **Contrast transitions** ("But..." moments): use a 5-frame opacity cross-fade between visual states.
+- **Hold the final state** for at least 1.5 seconds after the last animation so the viewer can absorb it.
 
 ## Choosing the "Coolest" Visualization
 

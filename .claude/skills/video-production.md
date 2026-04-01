@@ -40,11 +40,25 @@ For each scene in the approved storyboard:
 
 For each scene, decide the visual approach based on the storyboard:
 
+### CRITICAL: Every Narration Beat Gets a Visual Beat
+
+**Never leave a static visual on screen while narration continues.** The cardinal sin of explainer video is a number sitting on screen for 20 seconds while the narrator talks over it.
+
+Break each scene's narration into beats. Each beat (2-5 seconds) gets its own visual change:
+
+Example for a 25-second scene about housing costs:
+- Beat 1 (0-5s): "$1.5M" counter animates up → number is the focus
+- Beat 2 (5-12s): bar chart grows showing SF vs national median → comparison is the focus
+- Beat 3 (12-18s): "$133K income needed" flies in from right → new stat appears
+- Beat 4 (18-25s): "78% of income" pie/ring animates → final punch
+
+Use `<Sequence>` to compose multiple visuals within a single scene. Each Sequence contains a different component or animation state. The voiceover `.timing.json` tells you exactly when each word is spoken — use it to trigger visual transitions on the right frame.
+
 ### Data Visualization Scenes
 1. **Prepare the data:** `process_dataset` or `scrape_table` → clean JSON
 2. **Choose the viz type** following the data-visualization skill
-3. **Create the scene** with `create_data_viz` (for template-based) or `create_scene` (for custom TSX)
-4. **Sync to voiceover:** Read the `.timing.json` file. Set animation start frames to match when the narrator mentions each data point.
+3. **Create the scene** using `create_scene` with custom TSX that composes multiple visual beats within `<Sequence>` blocks
+4. **Sync to voiceover:** Read the `.timing.json` file. Map each narration beat to a visual transition. No visual should be static for more than 5 seconds.
 
 ### YouTube Clip Scenes
 1. **Find the right video:** `youtube_search` for the topic
