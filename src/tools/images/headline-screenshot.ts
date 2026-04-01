@@ -21,14 +21,57 @@ Captures the headline, subtitle, lead image, and byline as a clean clip.`,
     await mkdir(outputDir, { recursive: true });
     const outputPath = join(outputDir, filename || "headline_screenshot.png");
 
-    const browser = await chromium.launch({ headless: true });
+    const browser = await chromium.launch({
+      headless: true,
+      args: [
+        "--disable-blink-features=AutomationControlled",
+        "--no-sandbox",
+        "--disable-dev-shm-usage",
+      ],
+    });
     const context = await browser.newContext({
       viewport: { width: 1920, height: 1080 },
-      // Pretend we're a real browser to avoid bot detection
       userAgent:
-        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
       locale: "en-US",
+      timezoneId: "America/New_York",
+      extraHTTPHeaders: {
+        "Accept-Language": "en-US,en;q=0.9",
+        "Accept":
+          "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8",
+        "sec-ch-ua": '"Chromium";v="131", "Not_A Brand";v="24"',
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": '"macOS"',
+        "Upgrade-Insecure-Requests": "1",
+      },
     });
+
+    // Stealth: hide automation indicators from bot detection (NYT, New Yorker, etc.)
+    await context.addInitScript(() => {
+      // Remove webdriver flag — primary bot detection signal
+      Object.defineProperty(navigator, "webdriver", { get: () => undefined });
+      // Fake plugins array (empty array is a bot signal)
+      Object.defineProperty(navigator, "plugins", {
+        get: () => [1, 2, 3, 4, 5],
+      });
+      // Override languages
+      Object.defineProperty(navigator, "languages", {
+        get: () => ["en-US", "en"],
+      });
+      // Fake chrome runtime object
+      // @ts-ignore
+      window.chrome = { runtime: {} };
+      // Override permissions query for notifications
+      const originalQuery = window.navigator.permissions.query;
+      // @ts-ignore
+      window.navigator.permissions.query = (parameters: any) =>
+        parameters.name === "notifications"
+          ? Promise.resolve({
+              state: Notification.permission,
+            } as PermissionStatus)
+          : originalQuery(parameters);
+    });
+
     const page = await context.newPage();
 
     // Block unnecessary resources to speed up loading
