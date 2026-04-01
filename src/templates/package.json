@@ -1,0 +1,23 @@
+{
+  "name": "filmflow-video",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "remotion studio",
+    "render": "remotion render Root out/video.mp4",
+    "still": "remotion still Root out/thumbnail.png"
+  },
+  "dependencies": {
+    "remotion": "4.0.443",
+    "@remotion/cli": "4.0.443",
+    "@remotion/bundler": "4.0.443",
+    "react": "^19",
+    "react-dom": "^19",
+    "d3": "^7"
+  },
+  "devDependencies": {
+    "@types/d3": "^7",
+    "@types/react": "^19",
+    "typescript": "^5"
+  }
+}
