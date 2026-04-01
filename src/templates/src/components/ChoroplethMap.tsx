@@ -45,11 +45,14 @@ export const ChoroplethMap: React.FC<Props> = ({
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
-  // Build a lookup map: state name → value
+  // Build a lookup map: state name -> value
   const dataMap = new Map(data.map((d) => [d.id, d.value]));
 
   // Title fade
   const titleOpacity = interpolate(frame, [0, 15], [0, 1], {
+    extrapolateRight: "clamp",
+  });
+  const titleSlide = interpolate(frame, [0, 15], [20, 0], {
     extrapolateRight: "clamp",
   });
 
@@ -65,13 +68,19 @@ export const ChoroplethMap: React.FC<Props> = ({
     config: { damping: 30, stiffness: 80 },
   });
 
+  // Compute map sizing — fill most of the frame
+  const hasYear = !!yearLabel;
+  const mapContainerWidth = hasYear ? "88%" : "95%";
+  const mapMarginLeft = hasYear ? "8%" : "0%";
+
   return (
     <div
       style={{
         width: tokens.layout.width,
         height: tokens.layout.height,
         backgroundColor: tokens.colors.background,
-        padding: tokens.layout.padding,
+        padding: tokens.layout.padding * 0.6,
+        paddingTop: tokens.layout.padding * 0.5,
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -87,15 +96,35 @@ export const ChoroplethMap: React.FC<Props> = ({
             fontWeight: tokens.fontWeights.bold,
             color: tokens.colors.text,
             opacity: titleOpacity,
-            marginBottom: 20,
-            textAlign: "center",
+            transform: `translateY(${titleSlide}px)`,
+            marginBottom: 8,
+            textAlign: "center" as const,
+            width: "100%",
           }}
         >
           {title}
         </div>
       )}
 
-      {/* Map container */}
+      {/* Caption under title */}
+      {caption && (
+        <div
+          style={{
+            fontFamily: tokens.fonts.body,
+            fontSize: 20,
+            color: tokens.colors.textMuted,
+            opacity: interpolate(frame, [8, 22], [0, 1], {
+              extrapolateRight: "clamp",
+            }),
+            marginBottom: 10,
+            textAlign: "center" as const,
+          }}
+        >
+          {caption}
+        </div>
+      )}
+
+      {/* Map container — fills most of frame */}
       <div
         style={{
           flex: 1,
@@ -107,16 +136,16 @@ export const ChoroplethMap: React.FC<Props> = ({
           width: "100%",
         }}
       >
-        {/* Year label (like "2016" in Vox swing states graphic) */}
+        {/* Year label */}
         {yearLabel && (
           <div
             style={{
               position: "absolute",
               left: 0,
               top: "50%",
-              transform: `translateY(-50%)`,
+              transform: "translateY(-50%)",
               fontFamily: tokens.fonts.heading,
-              fontSize: 72,
+              fontSize: 80,
               fontWeight: tokens.fontWeights.black,
               color: tokens.colors.textMuted,
               opacity: yearProgress,
@@ -131,9 +160,10 @@ export const ChoroplethMap: React.FC<Props> = ({
           width={975}
           height={610}
           style={{
-            width: yearLabel ? "80%" : "90%",
+            width: mapContainerWidth,
             height: "auto",
-            marginLeft: yearLabel ? "10%" : 0,
+            marginLeft: mapMarginLeft,
+            maxHeight: "100%",
           }}
         >
           <Geographies geography={GEO_URL}>
@@ -152,22 +182,15 @@ export const ChoroplethMap: React.FC<Props> = ({
                   { extrapolateLeft: "clamp", extrapolateRight: "clamp" }
                 );
 
-                const fillColor = isHighlighted
-                  ? highlightColor
-                  : baseColor;
-
-                // Non-highlighted states are always visible; highlighted ones animate in
-                const stateOpacity = isHighlighted
-                  ? fillProgress
-                  : mapOpacity;
+                const stateOpacity = isHighlighted ? fillProgress : mapOpacity;
 
                 return (
                   <Geography
                     key={geo.rsmKey}
                     geography={geo}
-                    fill={isHighlighted ? fillColor : baseColor}
+                    fill={isHighlighted ? highlightColor : baseColor}
                     stroke={tokens.colors.background}
-                    strokeWidth={1}
+                    strokeWidth={1.5}
                     opacity={isHighlighted ? stateOpacity : 1}
                     style={{
                       default: { outline: "none" },
@@ -182,40 +205,21 @@ export const ChoroplethMap: React.FC<Props> = ({
         </ComposableMap>
       </div>
 
-      {/* Caption / Source footer */}
-      {(caption || source) && (
+      {/* Source footer */}
+      {source && (
         <div
           style={{
-            display: "flex",
-            justifyContent: "space-between",
-            width: "100%",
+            fontFamily: tokens.fonts.body,
+            fontSize: 14,
+            color: tokens.colors.textLight,
             opacity: interpolate(frame, [30, 50], [0, 1], {
               extrapolateRight: "clamp",
             }),
+            alignSelf: "flex-start",
+            marginTop: 8,
           }}
         >
-          {caption && (
-            <div
-              style={{
-                fontFamily: tokens.fonts.body,
-                fontSize: 16,
-                color: tokens.colors.textMuted,
-              }}
-            >
-              {caption}
-            </div>
-          )}
-          {source && (
-            <div
-              style={{
-                fontFamily: tokens.fonts.body,
-                fontSize: 14,
-                color: tokens.colors.textLight,
-              }}
-            >
-              Source: {source}
-            </div>
-          )}
+          Source: {source}
         </div>
       )}
     </div>

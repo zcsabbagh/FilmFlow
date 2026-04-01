@@ -1,41 +1,61 @@
 import { useCurrentFrame, spring, useVideoConfig, interpolate } from "remotion";
 import { tokens } from "../tokens";
 
+type ComparisonItem = {
+  label: string;
+  value: number;
+};
+
 type Props = {
-  leftLabel: string;
-  rightLabel: string;
-  leftValue: number;
-  rightValue: number;
+  items: ComparisonItem[];
   title?: string;
   caption?: string;
   source?: string;
   unit?: string;
-  /** Total dots in the dot-grid (default 100) */
-  dotTotal?: number;
+  /** Legacy props for backward compatibility */
+  leftLabel?: string;
+  rightLabel?: string;
+  leftValue?: number;
+  rightValue?: number;
 };
 
 export const ComparisonChart: React.FC<Props> = ({
-  leftLabel,
-  rightLabel,
-  leftValue,
-  rightValue,
+  items: itemsProp,
   title,
   caption,
   source,
   unit = "",
-  dotTotal = 100,
+  leftLabel,
+  rightLabel,
+  leftValue,
+  rightValue,
 }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-  const total = leftValue + rightValue;
-  const leftDots = Math.round((leftValue / total) * dotTotal);
-  const rightDots = dotTotal - leftDots;
-  const leftProgress = spring({ frame: frame - 5, fps, config: { damping: 20, stiffness: 80 } });
-  const rightProgress = spring({ frame: frame - 15, fps, config: { damping: 20, stiffness: 80 } });
 
-  const cols = 10;
-  const dotSize = 18;
-  const dotGap = 6;
+  // Support legacy props
+  const items: ComparisonItem[] =
+    itemsProp && itemsProp.length > 0
+      ? itemsProp
+      : leftLabel && rightLabel && leftValue !== undefined && rightValue !== undefined
+        ? [
+            { label: leftLabel, value: leftValue },
+            { label: rightLabel, value: rightValue },
+          ]
+        : [];
+
+  const maxValue = Math.max(...items.map((d) => d.value));
+
+  // Title animation
+  const titleOpacity = interpolate(frame, [0, 20], [0, 1], {
+    extrapolateRight: "clamp",
+  });
+  const titleSlide = interpolate(frame, [0, 20], [30, 0], {
+    extrapolateRight: "clamp",
+  });
+
+  // Max bar width — generous, filling most of the frame
+  const maxBarWidth = tokens.layout.width - tokens.layout.padding * 2 - 400;
 
   return (
     <div
@@ -44,114 +64,163 @@ export const ComparisonChart: React.FC<Props> = ({
         height: tokens.layout.height,
         backgroundColor: tokens.colors.background,
         padding: tokens.layout.padding,
+        paddingLeft: tokens.layout.padding + 20,
+        paddingRight: tokens.layout.padding + 20,
         fontFamily: tokens.fonts.body,
         color: tokens.colors.text,
         display: "flex",
         flexDirection: "column",
-        alignItems: "center",
         justifyContent: "center",
-        gap: 30,
       }}
     >
+      {/* Title */}
       {title && (
         <div
           style={{
-            fontSize: 46,
+            fontSize: 52,
             fontWeight: tokens.fontWeights.bold,
             fontFamily: tokens.fonts.heading,
             color: tokens.colors.primary,
-            opacity: interpolate(frame, [0, 15], [0, 1], { extrapolateRight: "clamp" }),
+            opacity: titleOpacity,
+            transform: `translateY(${titleSlide}px)`,
+            marginBottom: 12,
+            lineHeight: 1.15,
           }}
         >
           {title}
         </div>
       )}
 
-      {/* Dot grid for proportional representation */}
+      {/* Subtitle / caption under title */}
+      {caption && (
+        <div
+          style={{
+            fontSize: 20,
+            color: tokens.colors.textMuted,
+            fontFamily: tokens.fonts.body,
+            fontWeight: tokens.fontWeights.regular,
+            opacity: interpolate(frame, [10, 25], [0, 1], {
+              extrapolateRight: "clamp",
+            }),
+            marginBottom: 50,
+          }}
+        >
+          {caption}
+        </div>
+      )}
+
+      {/* Bars */}
       <div
         style={{
           display: "flex",
-          flexWrap: "wrap",
-          width: cols * (dotSize + dotGap),
-          gap: dotGap,
-          justifyContent: "center",
-          marginTop: 20,
-          marginBottom: 20,
+          flexDirection: "column",
+          gap: 36,
+          marginTop: title ? 0 : 20,
         }}
       >
-        {Array.from({ length: dotTotal }).map((_, i) => {
-          const isLeft = i < leftDots;
-          const dotProgress = isLeft ? leftProgress : rightProgress;
-          const dotColor = isLeft ? tokens.colors.chart[0] : tokens.colors.chart[1];
+        {items.map((item, i) => {
+          const barDelay = 15 + i * 12;
+          const barProgress = spring({
+            frame: frame - barDelay,
+            fps,
+            config: { damping: 22, stiffness: 60 },
+          });
+
+          const barWidth = (item.value / maxValue) * maxBarWidth * barProgress;
+
+          // Number count-up
+          const displayValue = Math.round(item.value * barProgress);
+
+          // Label fade
+          const labelOpacity = interpolate(
+            frame,
+            [barDelay - 5, barDelay + 5],
+            [0, 1],
+            { extrapolateLeft: "clamp", extrapolateRight: "clamp" }
+          );
+
+          // Value label fade (appears after bar grows)
+          const valueOpacity = interpolate(
+            frame,
+            [barDelay + 10, barDelay + 20],
+            [0, 1],
+            { extrapolateLeft: "clamp", extrapolateRight: "clamp" }
+          );
+
           return (
-            <div
-              key={i}
-              style={{
-                width: dotSize,
-                height: dotSize,
-                borderRadius: dotSize / 2,
-                backgroundColor: dotColor,
-                opacity: dotProgress,
-                transform: `scale(${dotProgress})`,
-              }}
-            />
+            <div key={item.label}>
+              {/* Label row */}
+              <div
+                style={{
+                  fontSize: 22,
+                  fontWeight: tokens.fontWeights.semibold,
+                  fontFamily: tokens.fonts.body,
+                  color: tokens.colors.text,
+                  opacity: labelOpacity,
+                  marginBottom: 10,
+                  letterSpacing: 0.3,
+                  textTransform: "uppercase" as const,
+                }}
+              >
+                {item.label}
+              </div>
+
+              {/* Bar + value */}
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 20,
+                }}
+              >
+                {/* Bar */}
+                <div
+                  style={{
+                    height: 48,
+                    width: Math.max(barWidth, 4),
+                    backgroundColor:
+                      i === 0
+                        ? tokens.colors.chart[0]
+                        : tokens.colors.chart[1],
+                    borderRadius: 0,
+                  }}
+                />
+
+                {/* Value at end of bar */}
+                <div
+                  style={{
+                    fontSize: 46,
+                    fontWeight: tokens.fontWeights.black,
+                    fontFamily: tokens.fonts.heading,
+                    color: tokens.colors.primary,
+                    opacity: valueOpacity,
+                    whiteSpace: "nowrap",
+                    lineHeight: 1,
+                  }}
+                >
+                  {displayValue.toLocaleString()}
+                  {unit ? ` ${unit}` : ""}
+                </div>
+              </div>
+            </div>
           );
         })}
       </div>
 
-      {/* Legend with big serif numbers */}
-      <div style={{ display: "flex", gap: 80, marginTop: 10 }}>
-        {[
-          { label: leftLabel, value: leftValue, progress: leftProgress, color: tokens.colors.chart[0] },
-          { label: rightLabel, value: rightValue, progress: rightProgress, color: tokens.colors.chart[1] },
-        ].map((item) => (
-          <div key={item.label} style={{ textAlign: "center" }}>
-            <div
-              style={{
-                fontSize: 80,
-                fontWeight: tokens.fontWeights.black,
-                fontFamily: tokens.fonts.heading,
-                color: tokens.colors.primary,
-                opacity: item.progress,
-              }}
-            >
-              {Math.round(item.value * item.progress).toLocaleString()}
-              {unit}
-            </div>
-            <div
-              style={{
-                fontSize: 22,
-                fontWeight: tokens.fontWeights.medium,
-                color: tokens.colors.textMuted,
-                fontFamily: tokens.fonts.body,
-                marginTop: 4,
-              }}
-            >
-              {item.label}
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {(caption || source) && (
+      {/* Source */}
+      {source && (
         <div
           style={{
-            display: "flex",
-            justifyContent: "space-between",
-            width: "100%",
-            opacity: interpolate(frame, [30, 45], [0, 1], { extrapolateRight: "clamp" }),
+            fontSize: 14,
+            color: tokens.colors.textLight,
+            fontFamily: tokens.fonts.body,
+            marginTop: 50,
+            opacity: interpolate(frame, [40, 55], [0, 1], {
+              extrapolateRight: "clamp",
+            }),
           }}
         >
-          {caption && (
-            <div style={{ fontSize: 16, color: tokens.colors.textMuted, fontFamily: tokens.fonts.body }}>
-              {caption}
-            </div>
-          )}
-          {source && (
-            <div style={{ fontSize: 14, color: tokens.colors.textLight, fontFamily: tokens.fonts.body }}>
-              Source: {source}
-            </div>
-          )}
+          Source: {source}
         </div>
       )}
     </div>
