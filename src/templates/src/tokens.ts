@@ -1,3 +1,5 @@
+import { fonts as loadedFonts } from "./fonts";
+
 export const tokens = {
   colors: {
     // Vox uses warm paper-white backgrounds
@@ -26,11 +28,9 @@ export const tokens = {
     },
   },
   fonts: {
-    // Vox uses Harriet Display (serif) + Balto (sans)
-    // Free equivalents: Playfair Display + Source Sans 3
-    heading: "Playfair Display",  // serif — for titles, big call-out numbers
-    body: "Source Sans 3",        // sans-serif — for labels, narration text, axis
-    mono: "JetBrains Mono",       // monospace — for data annotations
+    heading: loadedFonts.heading,  // Playfair Display via @remotion/google-fonts
+    body: loadedFonts.body,        // Source Sans 3 via @remotion/google-fonts
+    mono: "JetBrains Mono",
   },
   fontWeights: {
     regular: 400,
