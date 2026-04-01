@@ -13,10 +13,13 @@
     "@remotion/bundler": "4.0.443",
     "react": "^19",
     "react-dom": "^19",
-    "d3": "^7"
+    "d3": "^7",
+    "react-simple-maps": "^3",
+    "topojson-client": "^3"
   },
   "devDependencies": {
     "@types/d3": "^7",
+    "@types/topojson-client": "^3",
     "@types/react": "^19",
     "typescript": "^5"
   }
