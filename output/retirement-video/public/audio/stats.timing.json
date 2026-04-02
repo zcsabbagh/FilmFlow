@@ -2,118 +2,110 @@
   "words": [
     {
       "word": "The",
-      "startSeconds": 0.0,
-      "endSeconds": 0.1236
+      "startSeconds": 0,
+      "endSeconds": 0.078
     },
     {
       "word": "median",
-      "startSeconds": 0.1751,
-      "endSeconds": 0.4231
+      "startSeconds": 0.135,
+      "endSeconds": 0.477
     },
     {
       "word": "retirement",
-      "startSeconds": 0.4747,
-      "endSeconds": 0.8053
+      "startSeconds": 0.52,
+      "endSeconds": 0.95
     },
     {
       "word": "account?",
-      "startSeconds": 0.8356,
-      "endSeconds": 1.2284
+      "startSeconds": 1.02,
+      "endSeconds": 2.23
+    },
+    {
+      "word": "[pause]",
+      "startSeconds": 2.59,
+      "endSeconds": 3.053
     },
     {
       "word": "Two",
-      "startSeconds": 1.5173,
-      "endSeconds": 1.672
+      "startSeconds": 3.066,
+      "endSeconds": 3.105
     },
     {
       "word": "hundred",
-      "startSeconds": 1.7236,
-      "endSeconds": 1.8987
+      "startSeconds": 3.155,
+      "endSeconds": 3.505
     },
     {
       "word": "and",
-      "startSeconds": 1.9191,
-      "endSeconds": 1.9813
+      "startSeconds": 3.585,
+      "endSeconds": 3.825
     },
     {
       "word": "twelve",
-      "startSeconds": 2.0124,
-      "endSeconds": 2.2089
+      "startSeconds": 3.87,
+      "endSeconds": 4.14
     },
     {
       "word": "thousand",
-      "startSeconds": 2.2293,
-      "endSeconds": 2.4764
+      "startSeconds": 4.202,
+      "endSeconds": 4.698
     },
     {
       "word": "dollars.",
-      "startSeconds": 2.5076,
-      "endSeconds": 2.8693
+      "startSeconds": 4.778,
+      "endSeconds": 5.658
     },
     {
       "word": "That's",
-      "startSeconds": 2.9929,
-      "endSeconds": 3.1787
+      "startSeconds": 5.738,
+      "endSeconds": 6.138
     },
     {
       "word": "seven",
-      "startSeconds": 3.2098,
-      "endSeconds": 3.4053
+      "startSeconds": 6.191,
+      "endSeconds": 6.456
     },
     {
       "word": "years",
-      "startSeconds": 3.4569,
-      "endSeconds": 3.6329
+      "startSeconds": 6.496,
+      "endSeconds": 6.696
     },
     {
       "word": "of",
-      "startSeconds": 3.6533,
-      "endSeconds": 3.6942
+      "startSeconds": 6.722,
+      "endSeconds": 6.774
     },
     {
       "word": "expenses.",
-      "startSeconds": 3.7253,
-      "endSeconds": 4.3244
+      "startSeconds": 6.862,
+      "endSeconds": 8.006
     },
     {
-      "word": "And",
-      "startSeconds": 4.448,
-      "endSeconds": 4.5511
-    },
-    {
-      "word": "that's",
-      "startSeconds": 4.5822,
-      "endSeconds": 4.7262
-    },
-    {
-      "word": "the",
-      "startSeconds": 4.7573,
-      "endSeconds": 4.8196
-    },
-    {
-      "word": "median.",
-      "startSeconds": 4.8604,
-      "endSeconds": 5.2836
+      "word": "[sighs]",
+      "startSeconds": 8.226,
+      "endSeconds": 8.684
     },
     {
       "word": "Half",
-      "startSeconds": 5.4693,
-      "endSeconds": 5.6862
+      "startSeconds": 8.812,
+      "endSeconds": 9.324
     },
     {
       "word": "have",
-      "startSeconds": 5.728,
-      "endSeconds": 5.8204
+      "startSeconds": 9.356,
+      "endSeconds": 9.484
     },
     {
       "word": "even",
-      "startSeconds": 5.8409,
-      "endSeconds": 5.9751
+      "startSeconds": 9.532,
+      "endSeconds": 9.724
     },
     {
       "word": "less.",
-      "startSeconds": 6.0267,
-      "endSeconds": 6.5227
+      "startSeconds": 9.82,
+      "endSeconds": 10.524
     }
-  ]
+  ],
+  "durationSeconds": 10.524,
+  "durationFrames": 316
 }

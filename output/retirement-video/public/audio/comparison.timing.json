@@ -2,78 +2,80 @@
   "words": [
     {
       "word": "Denmark",
-      "startSeconds": 0.0,
-      "endSeconds": 0.3822
+      "startSeconds": 0,
+      "endSeconds": 0.56
     },
     {
       "word": "covers",
-      "startSeconds": 0.4436,
-      "endSeconds": 0.64
+      "startSeconds": 0.64,
+      "endSeconds": 1.12
     },
     {
       "word": "ninety-eight",
-      "startSeconds": 0.6916,
-      "endSeconds": 1.0116
+      "startSeconds": 1.2,
+      "endSeconds": 1.836
     },
     {
       "word": "percent",
-      "startSeconds": 1.032,
-      "endSeconds": 1.2693
+      "startSeconds": 1.916,
+      "endSeconds": 2.476
     },
     {
       "word": "of",
-      "startSeconds": 1.3004,
-      "endSeconds": 1.3413
+      "startSeconds": 2.556,
+      "endSeconds": 2.716
     },
     {
       "word": "its",
-      "startSeconds": 1.3724,
-      "endSeconds": 1.4444
+      "startSeconds": 2.756,
+      "endSeconds": 2.876
     },
     {
       "word": "workers.",
-      "startSeconds": 1.4756,
-      "endSeconds": 1.8987
+      "startSeconds": 2.946,
+      "endSeconds": 3.756
     },
     {
       "word": "The",
-      "startSeconds": 2.1876,
-      "endSeconds": 2.2702
+      "startSeconds": 3.896,
+      "endSeconds": 4.316
     },
     {
       "word": "Netherlands,",
-      "startSeconds": 2.312,
-      "endSeconds": 2.7351
+      "startSeconds": 4.369,
+      "endSeconds": 5.192
     },
     {
-      "word": "ninety",
-      "startSeconds": 2.8178,
-      "endSeconds": 3.024
-    },
-    {
-      "word": "percent.",
-      "startSeconds": 3.0551,
-      "endSeconds": 3.4471
+      "word": "ninety.",
+      "startSeconds": 5.272,
+      "endSeconds": 6.392
     },
     {
       "word": "Australia,",
-      "startSeconds": 3.8907,
-      "endSeconds": 4.3653
+      "startSeconds": 6.456,
+      "endSeconds": 7.112
     },
     {
       "word": "eighty-five.",
-      "startSeconds": 4.4062,
-      "endSeconds": 5.0151
+      "startSeconds": 7.192,
+      "endSeconds": 8.232
+    },
+    {
+      "word": "[pause]",
+      "startSeconds": 9.152,
+      "endSeconds": 10.392
     },
     {
       "word": "America?",
-      "startSeconds": 5.3049,
-      "endSeconds": 5.7796
+      "startSeconds": 10.412,
+      "endSeconds": 11.592
     },
     {
       "word": "Forty-five.",
-      "startSeconds": 5.9031,
-      "endSeconds": 6.7289
+      "startSeconds": 11.685,
+      "endSeconds": 13.11
     }
-  ]
+  ],
+  "durationSeconds": 13.11,
+  "durationFrames": 394
 }

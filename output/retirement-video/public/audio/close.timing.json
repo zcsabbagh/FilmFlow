@@ -1,89 +1,101 @@
 {
   "words": [
     {
+      "word": "[serious]",
+      "startSeconds": 0,
+      "endSeconds": 0.176
+    },
+    {
       "word": "Ten",
-      "startSeconds": 0.0,
-      "endSeconds": 0.1858
+      "startSeconds": 0.191,
+      "endSeconds": 0.236
     },
     {
       "word": "thousand",
-      "startSeconds": 0.2373,
-      "endSeconds": 0.5156
+      "startSeconds": 0.289,
+      "endSeconds": 0.713
     },
     {
       "word": "boomers",
-      "startSeconds": 0.568,
-      "endSeconds": 0.8053
+      "startSeconds": 0.793,
+      "endSeconds": 1.431
     },
     {
       "word": "retire",
-      "startSeconds": 0.8462,
-      "endSeconds": 1.1662
+      "startSeconds": 1.522,
+      "endSeconds": 2.068
     },
     {
       "word": "every",
-      "startSeconds": 1.1973,
-      "endSeconds": 1.3627
+      "startSeconds": 2.134,
+      "endSeconds": 2.464
     },
     {
       "word": "day.",
-      "startSeconds": 1.4036,
-      "endSeconds": 1.7236
+      "startSeconds": 2.564,
+      "endSeconds": 3.544
+    },
+    {
+      "word": "[pause]",
+      "startSeconds": 3.884,
+      "endSeconds": 4.487
     },
     {
       "word": "Half",
-      "startSeconds": 1.816,
-      "endSeconds": 2.0231
+      "startSeconds": 4.513,
+      "endSeconds": 4.617
     },
     {
       "word": "aren't",
-      "startSeconds": 2.0844,
-      "endSeconds": 2.2391
+      "startSeconds": 4.697,
+      "endSeconds": 5.097
     },
     {
       "word": "ready.",
-      "startSeconds": 2.2702,
-      "endSeconds": 2.6107
+      "startSeconds": 5.15,
+      "endSeconds": 5.495
     },
     {
       "word": "And",
-      "startSeconds": 2.7964,
-      "endSeconds": 2.8898
+      "startSeconds": 5.655,
+      "endSeconds": 6.135
     },
     {
       "word": "for",
-      "startSeconds": 2.9209,
-      "endSeconds": 2.9822
+      "startSeconds": 6.155,
+      "endSeconds": 6.215
     },
     {
       "word": "millennials,",
-      "startSeconds": 3.0036,
-      "endSeconds": 3.4053
+      "startSeconds": 6.268,
+      "endSeconds": 7.171
     },
     {
       "word": "it",
-      "startSeconds": 3.4267,
-      "endSeconds": 3.4987
+      "startSeconds": 7.224,
+      "endSeconds": 7.33
     },
     {
       "word": "may",
-      "startSeconds": 3.5191,
-      "endSeconds": 3.5911
+      "startSeconds": 7.39,
+      "endSeconds": 7.57
     },
     {
       "word": "be",
-      "startSeconds": 3.6329,
-      "endSeconds": 3.6942
+      "startSeconds": 7.65,
+      "endSeconds": 7.81
     },
     {
       "word": "even",
-      "startSeconds": 3.736,
-      "endSeconds": 3.9111
+      "startSeconds": 7.89,
+      "endSeconds": 8.21
     },
     {
       "word": "worse.",
-      "startSeconds": 3.9529,
-      "endSeconds": 4.4996
+      "startSeconds": 8.29,
+      "endSeconds": 8.77
     }
-  ]
+  ],
+  "durationSeconds": 8.77,
+  "durationFrames": 264
 }

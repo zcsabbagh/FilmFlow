@@ -1,39 +1,51 @@
 {
   "words": [
     {
+      "word": "[serious]",
+      "startSeconds": 0,
+      "endSeconds": 0.291
+    },
+    {
       "word": "Half",
-      "startSeconds": 0.0,
-      "endSeconds": 0.2169
+      "startSeconds": 0.312,
+      "endSeconds": 0.396
     },
     {
       "word": "of",
-      "startSeconds": 0.248,
-      "endSeconds": 0.2889
+      "startSeconds": 0.449,
+      "endSeconds": 0.555
     },
     {
       "word": "Americans",
-      "startSeconds": 0.3307,
-      "endSeconds": 0.6916
+      "startSeconds": 0.627,
+      "endSeconds": 1.275
+    },
+    {
+      "word": "[pause]",
+      "startSeconds": 1.435,
+      "endSeconds": 1.698
     },
     {
       "word": "have",
-      "startSeconds": 0.7227,
-      "endSeconds": 0.8053
+      "startSeconds": 1.708,
+      "endSeconds": 1.748
     },
     {
       "word": "zero",
-      "startSeconds": 0.8258,
-      "endSeconds": 1.0729
+      "startSeconds": 1.876,
+      "endSeconds": 2.388
     },
     {
       "word": "retirement",
-      "startSeconds": 1.1244,
-      "endSeconds": 1.4444
+      "startSeconds": 2.46,
+      "endSeconds": 3.18
     },
     {
       "word": "savings.",
-      "startSeconds": 1.4862,
-      "endSeconds": 2.1049
+      "startSeconds": 3.24,
+      "endSeconds": 3.74
     }
-  ]
+  ],
+  "durationSeconds": 3.74,
+  "durationFrames": 113
 }

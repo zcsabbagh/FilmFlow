@@ -41,6 +41,8 @@ For each scene in the approved storyboard:
 
 **Critical:** Generate ALL voiceovers AND SFX before building visuals.
 
+**NO DEAD AIR.** The narration should be continuous — no gaps longer than 1 second between scenes. Set each scene's frame count to EXACTLY `durationFrames + 15` (0.5s padding), not more. If a scene has both narration and a video clip, overlap them or keep the clip SHORT (3-5s). The viewer should hear talking the ENTIRE time — if there's a 3-second gap with no narration, the video feels broken.
+
 ## HARD RULES — NEVER VIOLATE
 
 1. **NEVER reuse interview clips.** For EVERY video, find 2-4 SHORT clips (3-5 seconds each) specific to THIS topic:
@@ -119,10 +121,10 @@ EVERY video must have background music. The template includes `public/audio/back
 
 Add this to the ROOT composition (not individual scenes) so it plays continuously:
 ```tsx
-<Audio src={staticFile("audio/background-music.mp3")} volume={0.15} />
+<Audio src={staticFile("audio/background-music.mp3")} volume={0.20} />
 ```
 
-Volume 0.15 (15%) — subtle enough to not compete with narration but adds professional feel. Increase to 0.25 during non-narrated moments (intro montage, interview clips). Decrease to 0.1 during dense data narration.
+Volume 0.20 (20%) — audible but doesn't compete with narration. Increase to 0.30 during non-narrated moments (intro montage, interview clips). Decrease to 0.12 during dense data narration.
 
 ## Intro Rules
 

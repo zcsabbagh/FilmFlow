@@ -1,164 +1,161 @@
 {
   "words": [
     {
+      "word": "[curious]",
+      "startSeconds": 0,
+      "endSeconds": 0.06
+    },
+    {
       "word": "In",
-      "startSeconds": 0.0,
-      "endSeconds": 0.1031
+      "startSeconds": 0.066,
+      "endSeconds": 0.078
     },
     {
       "word": "nineteen",
-      "startSeconds": 0.1547,
-      "endSeconds": 0.392
+      "startSeconds": 0.122,
+      "endSeconds": 0.474
     },
     {
       "word": "eighty,",
-      "startSeconds": 0.4436,
-      "endSeconds": 0.7538
+      "startSeconds": 0.531,
+      "endSeconds": 1.353
     },
     {
       "word": "sixty",
-      "startSeconds": 0.9084,
-      "endSeconds": 1.1973
+      "startSeconds": 1.406,
+      "endSeconds": 1.671
     },
     {
       "word": "percent",
-      "startSeconds": 1.2382,
-      "endSeconds": 1.4551
+      "startSeconds": 1.731,
+      "endSeconds": 2.151
     },
     {
       "word": "of",
-      "startSeconds": 1.4862,
-      "endSeconds": 1.5271
+      "startSeconds": 2.177,
+      "endSeconds": 2.229
     },
     {
       "word": "workers",
-      "startSeconds": 1.5689,
-      "endSeconds": 1.8062
+      "startSeconds": 2.289,
+      "endSeconds": 2.709
     },
     {
       "word": "had",
-      "startSeconds": 1.8471,
-      "endSeconds": 1.9298
+      "startSeconds": 2.749,
+      "endSeconds": 2.869
     },
     {
       "word": "a",
-      "startSeconds": 1.9502,
-      "endSeconds": 1.9716
+      "startSeconds": 2.909,
+      "endSeconds": 2.949
     },
     {
       "word": "pension.",
-      "startSeconds": 2.0124,
-      "endSeconds": 2.384
+      "startSeconds": 3.029,
+      "endSeconds": 3.789
     },
     {
       "word": "A",
-      "startSeconds": 2.5387,
-      "endSeconds": 2.6009
+      "startSeconds": 3.889,
+      "endSeconds": 3.989
     },
     {
       "word": "guaranteed",
-      "startSeconds": 2.6622,
-      "endSeconds": 3.0756
+      "startSeconds": 4.039,
+      "endSeconds": 4.539
     },
     {
       "word": "income",
-      "startSeconds": 3.1271,
-      "endSeconds": 3.416
+      "startSeconds": 4.607,
+      "endSeconds": 5.015
     },
     {
       "word": "for",
-      "startSeconds": 3.4471,
-      "endSeconds": 3.5084
+      "startSeconds": 5.075,
+      "endSeconds": 5.255
     },
     {
       "word": "life.",
-      "startSeconds": 3.56,
-      "endSeconds": 3.9316
+      "startSeconds": 5.383,
+      "endSeconds": 6.135
     },
     {
-      "word": "Today,",
-      "startSeconds": 4.3138,
-      "endSeconds": 4.696
+      "word": "Today?",
+      "startSeconds": 6.281,
+      "endSeconds": 7.571
     },
     {
-      "word": "that",
-      "startSeconds": 4.7164,
-      "endSeconds": 4.84
+      "word": "[pause]",
+      "startSeconds": 7.851,
+      "endSeconds": 8.291
     },
     {
-      "word": "number",
-      "startSeconds": 4.8818,
-      "endSeconds": 5.0462
-    },
-    {
-      "word": "is",
-      "startSeconds": 5.088,
-      "endSeconds": 5.1396
-    },
-    {
-      "word": "four",
-      "startSeconds": 5.1804,
-      "endSeconds": 5.3049
+      "word": "Four",
+      "startSeconds": 8.307,
+      "endSeconds": 8.371
     },
     {
       "word": "percent.",
-      "startSeconds": 5.3351,
-      "endSeconds": 5.7893
+      "startSeconds": 8.461,
+      "endSeconds": 9.331
     },
     {
       "word": "The",
-      "startSeconds": 6.0267,
-      "endSeconds": 6.1093
+      "startSeconds": 9.491,
+      "endSeconds": 9.971
     },
     {
       "word": "four-oh-one-k",
-      "startSeconds": 6.1511,
-      "endSeconds": 6.7387
+      "startSeconds": 10.035,
+      "endSeconds": 10.931
     },
     {
       "word": "was",
-      "startSeconds": 6.9458,
-      "endSeconds": 7.0382
+      "startSeconds": 10.991,
+      "endSeconds": 11.171
     },
     {
       "word": "supposed",
-      "startSeconds": 7.0587,
-      "endSeconds": 7.2756
+      "startSeconds": 11.215,
+      "endSeconds": 11.567
     },
     {
       "word": "to",
-      "startSeconds": 7.296,
-      "endSeconds": 7.3378
+      "startSeconds": 11.593,
+      "endSeconds": 11.645
     },
     {
       "word": "supplement",
-      "startSeconds": 7.3893,
-      "endSeconds": 7.6782
+      "startSeconds": 11.695,
+      "endSeconds": 12.195
     },
     {
       "word": "pensions.",
-      "startSeconds": 7.7191,
-      "endSeconds": 8.1529
+      "startSeconds": 12.266,
+      "endSeconds": 12.914
     },
     {
       "word": "Instead,",
-      "startSeconds": 8.5351,
-      "endSeconds": 8.9369
+      "startSeconds": 13.024,
+      "endSeconds": 14.194
     },
     {
       "word": "it",
-      "startSeconds": 8.968,
-      "endSeconds": 9.0507
+      "startSeconds": 14.22,
+      "endSeconds": 14.272
     },
     {
       "word": "replaced",
-      "startSeconds": 9.0818,
-      "endSeconds": 9.3396
+      "startSeconds": 14.343,
+      "endSeconds": 14.911
     },
     {
       "word": "them.",
-      "startSeconds": 9.36,
-      "endSeconds": 9.7422
+      "startSeconds": 14.943,
+      "endSeconds": 15.391
     }
-  ]
+  ],
+  "durationSeconds": 15.391,
+  "durationFrames": 462
 }
