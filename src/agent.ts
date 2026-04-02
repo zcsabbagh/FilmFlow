@@ -27,6 +27,7 @@ import { fredSearchTool } from "./tools/data/fred.js";
 
 // Audio tools
 import { generateVoiceoverTool } from "./tools/audio/generate-voiceover.js";
+import { generateSfxTool } from "./tools/audio/generate-sfx.js";
 
 // Composition tools
 import { createSceneTool } from "./tools/composition/create-scene.js";
@@ -94,6 +95,7 @@ function getSharedOptions() {
       fredSearchTool,
       // Audio
       generateVoiceoverTool,
+      generateSfxTool,
       // Composition
       createSceneTool,
       createDataVizTool,

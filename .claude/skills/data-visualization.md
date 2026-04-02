@@ -142,10 +142,19 @@ const jobsProgress = showBars
 
 Real Vox uses multi-layered, physically-inspired motion. Our current animations are too simple (basic fades and grows). To close the gap:
 
-**Layer every frame.** Never have a blank background. Use:
-- Faded background photo from Wikimedia (opacity 0.1-0.15, grayscale)
-- Subtle grid overlay (60px grid, opacity 0.2-0.3) for texture
-- Diagonal hash lines (opacity 0.03) for depth
+**Layer every frame.** Never have a blank background. But NEVER just show a stock photo full-screen:
+- Faded background photo (opacity 0.1-0.15, grayscale) as TEXTURE, not content
+- Photos should be RELEVANT to what's being said at that moment — search Pexels/Pixabay for the specific concept
+- Overlay data/text ON TOP of the image, not next to it
+- Images can slide in from the side as PANELS (40% width) alongside data on the other 60%
+- Use subtle grid overlay (60px grid, opacity 0.2-0.3) for additional texture
+- Use gradient masks on images so they blend with the background instead of sitting as rectangles
+
+**Sound effects for transitions.** Use `generate_sound_effect` to create:
+- A "subtle whoosh" for scene transitions
+- A "soft impact" for number reveals
+- A "gentle slide" for text appearing
+Add these as `<Audio>` tags at transition points in scenes.
 
 **Asymmetric layouts.** Don't center everything. Place the main element left-aligned at ~58% width, with supporting context on the right. This creates visual hierarchy.
 

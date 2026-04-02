@@ -28,13 +28,28 @@ Follow each phase in order. Do not skip ahead.
 
 For each scene in the approved storyboard:
 
-1. **Finalize the narration text** — clean, speakable prose (see scriptwriting skill)
+1. **Finalize the narration text** — with v3 audio tags inline (see scriptwriting skill)
 2. **Generate voiceover** with `generate_voiceover`
+   - **ALWAYS use v3** — it's the default. Include audio tags: `[pause]`, `[serious]`, `[sighs]`, `[curious]`
+   - Default speed is 1.15x (punchy). Use 1.0 for emotional moments, 1.3 for fast data dumps
+   - Choose voice: `narrator-male` (British male) or `narrator-female` (British female)
    - This returns word-level timing data (`.timing.json`)
-   - Read the timing file to learn the exact duration and when each word is spoken
-3. **Calculate scene duration** — use `durationFrames` from the voiceover result, add 30 frames (1 second) of padding at the end
+3. **Generate transition SFX** with `generate_sound_effect`
+   - Generate 2-3 sound effects for the video: "subtle whoosh transition", "soft data reveal impact", "gentle paper slide"
+   - Use these in `<Audio>` tags at scene transitions and data reveals
+4. **Calculate scene duration** — use `durationFrames` + 20 frames padding (not 30 — keep it tight)
 
-**Critical:** Generate ALL voiceovers before building any visuals. You need the exact timing to sync animations.
+**Critical:** Generate ALL voiceovers AND SFX before building visuals.
+
+## HARD RULES — NEVER VIOLATE
+
+1. **NEVER reuse the same interview clip across videos.** Find a SPECIFIC clip for THIS topic using `youtube_search` + `youtube_transcript` + `clip_youtube_video`. If you can't find one, DON'T use an interview clip at all — use a different visual instead.
+
+2. **NEVER use generic stock images that just transition one to the next.** Every image must be OVERLAYED with data, text, or graphics — never shown alone as a full-screen static shot. Use images as BACKGROUNDS (opacity 0.1-0.2) behind data, or as PANELS that slide in from the side alongside text.
+
+3. **Images must be RELEVANT to the specific narration.** When the narrator says "healthcare costs tripled," show a hospital bill image. When they say "pension," show an older worker. Don't show a random sunset.
+
+4. **Pair every animation with the exact word being spoken.** Read the `.timing.json` and set animation start frames to the frame when the narrator says the relevant number or concept. This is non-negotiable.
 
 ## Phase 3: VISUALS
 
