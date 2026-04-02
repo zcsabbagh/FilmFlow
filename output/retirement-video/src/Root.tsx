@@ -1,19 +1,23 @@
 import { Composition, Sequence, Audio, staticFile } from "remotion";
 import { tokens } from "./tokens";
 import { Scene as Intro } from "./scenes/Scene01-Intro";
-import { Scene as Interview } from "./scenes/Scene02-Interview";
+import { Scene as Interview1 } from "./scenes/Scene02-Interview";
 import { Scene as Stats } from "./scenes/Scene03-Stats";
-import { Scene as History } from "./scenes/Scene04-History";
-import { Scene as Countries } from "./scenes/Scene05-Countries";
-import { Scene as Close } from "./scenes/Scene06-Close";
+import { Scene as Interview2 } from "./scenes/Scene04-Interview2";
+import { Scene as History } from "./scenes/Scene05-History";
+import { Scene as Interview3 } from "./scenes/Scene06-Interview3";
+import { Scene as Countries } from "./scenes/Scene07-Countries";
+import { Scene as Close } from "./scenes/Scene08-Close";
 
 const SCENES = [
-  { component: Intro, frames: 120 },          // 4s punchy intro (shorter!)
-  { component: Interview, frames: 300 },      // 10s interview clip
-  { component: Stats, frames: 381 + 20 },     // 12.7s stats (tighter padding)
-  { component: History, frames: 468 + 20 },   // 15.6s pension history
-  { component: Countries, frames: 348 + 20 }, // 11.6s country comparison
-  { component: Close, frames: 279 + 20 },     // 9.3s close
+  { component: Intro, frames: 93 },           // 3.1s — intro hook
+  { component: Interview1, frames: 135 },      // 4.5s — "retirement crisis" clip
+  { component: Stats, frames: 225 },           // 7.5s — $212K stats
+  { component: Interview2, frames: 165 },      // 5.5s — 60 Minutes clip
+  { component: History, frames: 322 },         // 10.7s — pension history
+  { component: Interview3, frames: 135 },      // 4.5s — CNBC 401k clip
+  { component: Countries, frames: 231 },       // 7.7s — country comparison
+  { component: Close, frames: 165 },           // 5.5s — closing stats
 ];
 
 const TOTAL = SCENES.reduce((s, sc) => s + sc.frames, 0);

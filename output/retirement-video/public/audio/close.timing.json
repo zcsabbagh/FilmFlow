@@ -1,0 +1,89 @@
+{
+  "words": [
+    {
+      "word": "Ten",
+      "startSeconds": 0.0,
+      "endSeconds": 0.1858
+    },
+    {
+      "word": "thousand",
+      "startSeconds": 0.2373,
+      "endSeconds": 0.5156
+    },
+    {
+      "word": "boomers",
+      "startSeconds": 0.568,
+      "endSeconds": 0.8053
+    },
+    {
+      "word": "retire",
+      "startSeconds": 0.8462,
+      "endSeconds": 1.1662
+    },
+    {
+      "word": "every",
+      "startSeconds": 1.1973,
+      "endSeconds": 1.3627
+    },
+    {
+      "word": "day.",
+      "startSeconds": 1.4036,
+      "endSeconds": 1.7236
+    },
+    {
+      "word": "Half",
+      "startSeconds": 1.816,
+      "endSeconds": 2.0231
+    },
+    {
+      "word": "aren't",
+      "startSeconds": 2.0844,
+      "endSeconds": 2.2391
+    },
+    {
+      "word": "ready.",
+      "startSeconds": 2.2702,
+      "endSeconds": 2.6107
+    },
+    {
+      "word": "And",
+      "startSeconds": 2.7964,
+      "endSeconds": 2.8898
+    },
+    {
+      "word": "for",
+      "startSeconds": 2.9209,
+      "endSeconds": 2.9822
+    },
+    {
+      "word": "millennials,",
+      "startSeconds": 3.0036,
+      "endSeconds": 3.4053
+    },
+    {
+      "word": "it",
+      "startSeconds": 3.4267,
+      "endSeconds": 3.4987
+    },
+    {
+      "word": "may",
+      "startSeconds": 3.5191,
+      "endSeconds": 3.5911
+    },
+    {
+      "word": "be",
+      "startSeconds": 3.6329,
+      "endSeconds": 3.6942
+    },
+    {
+      "word": "even",
+      "startSeconds": 3.736,
+      "endSeconds": 3.9111
+    },
+    {
+      "word": "worse.",
+      "startSeconds": 3.9529,
+      "endSeconds": 4.4996
+    }
+  ]
+}

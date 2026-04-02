@@ -1,0 +1,119 @@
+{
+  "words": [
+    {
+      "word": "The",
+      "startSeconds": 0.0,
+      "endSeconds": 0.1236
+    },
+    {
+      "word": "median",
+      "startSeconds": 0.1751,
+      "endSeconds": 0.4231
+    },
+    {
+      "word": "retirement",
+      "startSeconds": 0.4747,
+      "endSeconds": 0.8053
+    },
+    {
+      "word": "account?",
+      "startSeconds": 0.8356,
+      "endSeconds": 1.2284
+    },
+    {
+      "word": "Two",
+      "startSeconds": 1.5173,
+      "endSeconds": 1.672
+    },
+    {
+      "word": "hundred",
+      "startSeconds": 1.7236,
+      "endSeconds": 1.8987
+    },
+    {
+      "word": "and",
+      "startSeconds": 1.9191,
+      "endSeconds": 1.9813
+    },
+    {
+      "word": "twelve",
+      "startSeconds": 2.0124,
+      "endSeconds": 2.2089
+    },
+    {
+      "word": "thousand",
+      "startSeconds": 2.2293,
+      "endSeconds": 2.4764
+    },
+    {
+      "word": "dollars.",
+      "startSeconds": 2.5076,
+      "endSeconds": 2.8693
+    },
+    {
+      "word": "That's",
+      "startSeconds": 2.9929,
+      "endSeconds": 3.1787
+    },
+    {
+      "word": "seven",
+      "startSeconds": 3.2098,
+      "endSeconds": 3.4053
+    },
+    {
+      "word": "years",
+      "startSeconds": 3.4569,
+      "endSeconds": 3.6329
+    },
+    {
+      "word": "of",
+      "startSeconds": 3.6533,
+      "endSeconds": 3.6942
+    },
+    {
+      "word": "expenses.",
+      "startSeconds": 3.7253,
+      "endSeconds": 4.3244
+    },
+    {
+      "word": "And",
+      "startSeconds": 4.448,
+      "endSeconds": 4.5511
+    },
+    {
+      "word": "that's",
+      "startSeconds": 4.5822,
+      "endSeconds": 4.7262
+    },
+    {
+      "word": "the",
+      "startSeconds": 4.7573,
+      "endSeconds": 4.8196
+    },
+    {
+      "word": "median.",
+      "startSeconds": 4.8604,
+      "endSeconds": 5.2836
+    },
+    {
+      "word": "Half",
+      "startSeconds": 5.4693,
+      "endSeconds": 5.6862
+    },
+    {
+      "word": "have",
+      "startSeconds": 5.728,
+      "endSeconds": 5.8204
+    },
+    {
+      "word": "even",
+      "startSeconds": 5.8409,
+      "endSeconds": 5.9751
+    },
+    {
+      "word": "less.",
+      "startSeconds": 6.0267,
+      "endSeconds": 6.5227
+    }
+  ]
+}

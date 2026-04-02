@@ -1,0 +1,39 @@
+{
+  "words": [
+    {
+      "word": "Half",
+      "startSeconds": 0.0,
+      "endSeconds": 0.2169
+    },
+    {
+      "word": "of",
+      "startSeconds": 0.248,
+      "endSeconds": 0.2889
+    },
+    {
+      "word": "Americans",
+      "startSeconds": 0.3307,
+      "endSeconds": 0.6916
+    },
+    {
+      "word": "have",
+      "startSeconds": 0.7227,
+      "endSeconds": 0.8053
+    },
+    {
+      "word": "zero",
+      "startSeconds": 0.8258,
+      "endSeconds": 1.0729
+    },
+    {
+      "word": "retirement",
+      "startSeconds": 1.1244,
+      "endSeconds": 1.4444
+    },
+    {
+      "word": "savings.",
+      "startSeconds": 1.4862,
+      "endSeconds": 2.1049
+    }
+  ]
+}

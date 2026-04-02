@@ -1,0 +1,79 @@
+{
+  "words": [
+    {
+      "word": "Denmark",
+      "startSeconds": 0.0,
+      "endSeconds": 0.3822
+    },
+    {
+      "word": "covers",
+      "startSeconds": 0.4436,
+      "endSeconds": 0.64
+    },
+    {
+      "word": "ninety-eight",
+      "startSeconds": 0.6916,
+      "endSeconds": 1.0116
+    },
+    {
+      "word": "percent",
+      "startSeconds": 1.032,
+      "endSeconds": 1.2693
+    },
+    {
+      "word": "of",
+      "startSeconds": 1.3004,
+      "endSeconds": 1.3413
+    },
+    {
+      "word": "its",
+      "startSeconds": 1.3724,
+      "endSeconds": 1.4444
+    },
+    {
+      "word": "workers.",
+      "startSeconds": 1.4756,
+      "endSeconds": 1.8987
+    },
+    {
+      "word": "The",
+      "startSeconds": 2.1876,
+      "endSeconds": 2.2702
+    },
+    {
+      "word": "Netherlands,",
+      "startSeconds": 2.312,
+      "endSeconds": 2.7351
+    },
+    {
+      "word": "ninety",
+      "startSeconds": 2.8178,
+      "endSeconds": 3.024
+    },
+    {
+      "word": "percent.",
+      "startSeconds": 3.0551,
+      "endSeconds": 3.4471
+    },
+    {
+      "word": "Australia,",
+      "startSeconds": 3.8907,
+      "endSeconds": 4.3653
+    },
+    {
+      "word": "eighty-five.",
+      "startSeconds": 4.4062,
+      "endSeconds": 5.0151
+    },
+    {
+      "word": "America?",
+      "startSeconds": 5.3049,
+      "endSeconds": 5.7796
+    },
+    {
+      "word": "Forty-five.",
+      "startSeconds": 5.9031,
+      "endSeconds": 6.7289
+    }
+  ]
+}
