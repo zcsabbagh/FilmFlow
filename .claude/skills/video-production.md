@@ -51,6 +51,14 @@ For each scene in the approved storyboard:
 
 4. **Pair every animation with the exact word being spoken.** Read the `.timing.json` and set animation start frames to the frame when the narrator says the relevant number or concept. This is non-negotiable.
 
+5. **NEVER show interview/video clips full-screen.** Always composite them:
+   - Place the clip in a rounded rectangle (borderRadius 12px) at 60-70% size
+   - Position it off-center (left or right third)
+   - Put it on top of a colored or textured background (not black)
+   - Add a subtle drop shadow
+   - Include a lower-third with the speaker's quote and attribution
+   - The background behind the clip should use the warm paper color or a relevant image at low opacity
+
 ## Phase 3: VISUALS
 
 For each scene, decide the visual approach based on the storyboard:
@@ -98,6 +106,29 @@ Write a custom scene with `create_scene`:
 - Subtitle in sans-serif (Source Sans 3)
 - Warm paper background
 - Fade-in animation
+
+## Background Music
+
+EVERY video must have background music. The template includes `public/audio/background-music.mp3` (2:10 long).
+
+Add this to the ROOT composition (not individual scenes) so it plays continuously:
+```tsx
+<Audio src={staticFile("audio/background-music.mp3")} volume={0.15} />
+```
+
+Volume 0.15 (15%) — subtle enough to not compete with narration but adds professional feel. Increase to 0.25 during non-narrated moments (intro montage, interview clips). Decrease to 0.1 during dense data narration.
+
+## Intro Rules
+
+The intro MUST be punchy — 3-5 seconds max. It should:
+- Open with a RAPID image montage (3-4 images, each shown for 15-20 frames)
+- Images should be grayscale, high-contrast, with a dark overlay
+- The hook stat or phrase punches in OVER the images (large serif, white text on dark)
+- Add a transition SFX (whoosh or impact) as the text appears
+- Background music should be louder here (volume 0.25)
+- Then CUT immediately to the first data scene or interview
+
+DO NOT make the intro a slow fade-in. It should hit hard and fast.
 
 ## Phase 4: ASSEMBLE
 
