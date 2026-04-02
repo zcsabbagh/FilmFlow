@@ -24,7 +24,7 @@ Available voices:
     outputDir: z.string().describe("Directory to save audio + timing files"),
     filename: z.string().describe("Output filename (e.g. 'scene01.mp3')"),
     voice: z.string().optional().default("narrator-male").describe("Voice: 'narrator-male', 'narrator-female', or a voice ID"),
-    speed: z.number().optional().default(1.15).describe("Playback speed (1.0 = normal, 1.15 = slightly faster, 1.3 = fast)"),
+    speed: z.number().optional().default(1.35).describe("Playback speed (1.15 = emotional moments, 1.35 = default punchy, 1.5 = fast data dumps)"),
   },
   async ({ text, outputDir, filename, voice, speed }) => {
     const apiKey = process.env.ELEVENLABS_API_KEY;

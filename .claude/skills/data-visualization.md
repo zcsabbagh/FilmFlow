@@ -150,6 +150,21 @@ Real Vox uses multi-layered, physically-inspired motion. Our current animations 
 - Use subtle grid overlay (60px grid, opacity 0.2-0.3) for additional texture
 - Use gradient masks on images so they blend with the background instead of sitting as rectangles
 
+**Image collage style.** When showing multiple images, DON'T just crossfade between them. Create collages:
+- Stack 2-3 images partially overlapping, each slightly rotated (±2-5 degrees)
+- Offset images vertically and horizontally so they fan out like a spread of photos
+- Add subtle drop shadows (0 4px 20px rgba(0,0,0,0.15)) to give depth
+- Animate each image in separately with staggered timing (8 frames apart)
+- Each image slides in from a different direction (left, right, bottom)
+- Use `borderRadius: 8px` on image containers for a softer feel
+- Some images can be smaller "thumbnail" accents while one is larger and dominant
+
+Example layout patterns:
+- **Fan spread:** 3 images fanned out like cards, center one largest
+- **Stack cascade:** images stacked diagonally, each offset 40px right and 30px down
+- **Side panel + overlay:** large image left (60%), two smaller stacked right (40%)
+- **Polaroid cluster:** images with white borders, scattered at slight angles
+
 **Sound effects for transitions.** Use `generate_sound_effect` to create:
 - A "subtle whoosh" for scene transitions
 - A "soft impact" for number reveals

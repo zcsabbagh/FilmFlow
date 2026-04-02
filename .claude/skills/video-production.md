@@ -31,7 +31,7 @@ For each scene in the approved storyboard:
 1. **Finalize the narration text** — with v3 audio tags inline (see scriptwriting skill)
 2. **Generate voiceover** with `generate_voiceover`
    - **ALWAYS use v3** — it's the default. Include audio tags: `[pause]`, `[serious]`, `[sighs]`, `[curious]`
-   - Default speed is 1.15x (punchy). Use 1.0 for emotional moments, 1.3 for fast data dumps
+   - Default speed is 1.35x (punchy and fast). Use 1.15 for emotional moments, 1.5 for fast data dumps
    - Choose voice: `narrator-male` (British male) or `narrator-female` (British female)
    - This returns word-level timing data (`.timing.json`)
 3. **Generate transition SFX** with `generate_sound_effect`
@@ -43,7 +43,13 @@ For each scene in the approved storyboard:
 
 ## HARD RULES — NEVER VIOLATE
 
-1. **NEVER reuse the same interview clip across videos.** Find a SPECIFIC clip for THIS topic using `youtube_search` + `youtube_transcript` + `clip_youtube_video`. If you can't find one, DON'T use an interview clip at all — use a different visual instead.
+1. **NEVER reuse interview clips.** For EVERY video, find 2-4 SHORT clips (3-5 seconds each) specific to THIS topic:
+   - Use `youtube_search` to find 5-10 candidate videos on the topic
+   - Use `youtube_transcript` to scan each for good moments (emotional quotes, expert statements, on-the-ground footage)
+   - Use `clip_youtube_video` to clip 3-5 second segments from different videos
+   - Scatter these micro-clips throughout the video between data scenes
+   - Each clip should show a DIFFERENT person/perspective
+   - If you truly can't find clips, use B-roll video from Pexels instead — NEVER reuse clips from another FilmFlow video
 
 2. **NEVER use generic stock images that just transition one to the next.** Every image must be OVERLAYED with data, text, or graphics — never shown alone as a full-screen static shot. Use images as BACKGROUNDS (opacity 0.1-0.2) behind data, or as PANELS that slide in from the side alongside text.
 
