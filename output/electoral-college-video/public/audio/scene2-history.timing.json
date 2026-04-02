@@ -1,0 +1,231 @@
+{
+  "text": "[serious] In seventeen eighty-seven, the founders created a compromise. The Electoral College. [pause] Built for thirteen states and four million people. [curious] But the country kept growing. And the system [pause] didn't.",
+  "words": [
+    {
+      "word": "[serious]",
+      "start": 0,
+      "end": 0.181,
+      "startFrame": 0,
+      "endFrame": 5
+    },
+    {
+      "word": "In",
+      "start": 0.181,
+      "end": 0.289,
+      "startFrame": 5,
+      "endFrame": 9
+    },
+    {
+      "word": "seventeen",
+      "start": 0.289,
+      "end": 0.838,
+      "startFrame": 9,
+      "endFrame": 25
+    },
+    {
+      "word": "eighty-seven,",
+      "start": 0.838,
+      "end": 2.004,
+      "startFrame": 25,
+      "endFrame": 60
+    },
+    {
+      "word": "the",
+      "start": 2.004,
+      "end": 2.117,
+      "startFrame": 60,
+      "endFrame": 64
+    },
+    {
+      "word": "founders",
+      "start": 2.117,
+      "end": 2.591,
+      "startFrame": 64,
+      "endFrame": 78
+    },
+    {
+      "word": "created",
+      "start": 2.591,
+      "end": 3.021,
+      "startFrame": 78,
+      "endFrame": 91
+    },
+    {
+      "word": "a",
+      "start": 3.021,
+      "end": 3.159,
+      "startFrame": 91,
+      "endFrame": 95
+    },
+    {
+      "word": "compromise.",
+      "start": 3.159,
+      "end": 4.139,
+      "startFrame": 95,
+      "endFrame": 124
+    },
+    {
+      "word": "The",
+      "start": 4.139,
+      "end": 4.427,
+      "startFrame": 124,
+      "endFrame": 133
+    },
+    {
+      "word": "Electoral",
+      "start": 4.427,
+      "end": 4.939,
+      "startFrame": 133,
+      "endFrame": 148
+    },
+    {
+      "word": "College.",
+      "start": 4.939,
+      "end": 6.639,
+      "startFrame": 148,
+      "endFrame": 199
+    },
+    {
+      "word": "[pause]",
+      "start": 6.639,
+      "end": 7.13,
+      "startFrame": 199,
+      "endFrame": 214
+    },
+    {
+      "word": "Built",
+      "start": 7.13,
+      "end": 7.21,
+      "startFrame": 214,
+      "endFrame": 216
+    },
+    {
+      "word": "for",
+      "start": 7.21,
+      "end": 7.383,
+      "startFrame": 216,
+      "endFrame": 221
+    },
+    {
+      "word": "thirteen",
+      "start": 7.383,
+      "end": 7.875,
+      "startFrame": 221,
+      "endFrame": 236
+    },
+    {
+      "word": "states",
+      "start": 7.875,
+      "end": 8.323,
+      "startFrame": 236,
+      "endFrame": 250
+    },
+    {
+      "word": "and",
+      "start": 8.323,
+      "end": 8.491,
+      "startFrame": 250,
+      "endFrame": 255
+    },
+    {
+      "word": "four",
+      "start": 8.491,
+      "end": 8.733,
+      "startFrame": 255,
+      "endFrame": 262
+    },
+    {
+      "word": "million",
+      "start": 8.733,
+      "end": 9.14,
+      "startFrame": 262,
+      "endFrame": 274
+    },
+    {
+      "word": "people.",
+      "start": 9.14,
+      "end": 9.97,
+      "startFrame": 274,
+      "endFrame": 299
+    },
+    {
+      "word": "[curious]",
+      "start": 9.97,
+      "end": 10.029,
+      "startFrame": 299,
+      "endFrame": 301
+    },
+    {
+      "word": "But",
+      "start": 10.029,
+      "end": 10.061,
+      "startFrame": 301,
+      "endFrame": 302
+    },
+    {
+      "word": "the",
+      "start": 10.061,
+      "end": 10.171,
+      "startFrame": 302,
+      "endFrame": 305
+    },
+    {
+      "word": "country",
+      "start": 10.171,
+      "end": 10.569,
+      "startFrame": 305,
+      "endFrame": 317
+    },
+    {
+      "word": "kept",
+      "start": 10.569,
+      "end": 10.821,
+      "startFrame": 317,
+      "endFrame": 325
+    },
+    {
+      "word": "growing.",
+      "start": 10.821,
+      "end": 11.621,
+      "startFrame": 325,
+      "endFrame": 349
+    },
+    {
+      "word": "And",
+      "start": 11.621,
+      "end": 11.821,
+      "startFrame": 349,
+      "endFrame": 355
+    },
+    {
+      "word": "the",
+      "start": 11.821,
+      "end": 11.961,
+      "startFrame": 355,
+      "endFrame": 359
+    },
+    {
+      "word": "system",
+      "start": 11.961,
+      "end": 12.761,
+      "startFrame": 359,
+      "endFrame": 383
+    },
+    {
+      "word": "[pause]",
+      "start": 12.761,
+      "end": 13.257,
+      "startFrame": 383,
+      "endFrame": 398
+    },
+    {
+      "word": "didn't.",
+      "start": 13.257,
+      "end": 13.881,
+      "startFrame": 398,
+      "endFrame": 416
+    }
+  ],
+  "durationSeconds": 13.881,
+  "durationFrames": 417
+}

@@ -1,0 +1,84 @@
+{
+  "text": "The system that picks your president [pause] wasn't designed for you.",
+  "words": [
+    {
+      "word": "The",
+      "start": 0,
+      "end": 0.227,
+      "startFrame": 0,
+      "endFrame": 7
+    },
+    {
+      "word": "system",
+      "start": 0.227,
+      "end": 0.667,
+      "startFrame": 7,
+      "endFrame": 20
+    },
+    {
+      "word": "that",
+      "start": 0.667,
+      "end": 0.835,
+      "startFrame": 20,
+      "endFrame": 25
+    },
+    {
+      "word": "picks",
+      "start": 0.835,
+      "end": 1.067,
+      "startFrame": 25,
+      "endFrame": 32
+    },
+    {
+      "word": "your",
+      "start": 1.067,
+      "end": 1.307,
+      "startFrame": 32,
+      "endFrame": 39
+    },
+    {
+      "word": "president",
+      "start": 1.307,
+      "end": 3.115,
+      "startFrame": 39,
+      "endFrame": 93
+    },
+    {
+      "word": "[pause]",
+      "start": 3.115,
+      "end": 3.347,
+      "startFrame": 93,
+      "endFrame": 100
+    },
+    {
+      "word": "wasn't",
+      "start": 3.347,
+      "end": 3.786,
+      "startFrame": 100,
+      "endFrame": 114
+    },
+    {
+      "word": "designed",
+      "start": 3.786,
+      "end": 4.106,
+      "startFrame": 114,
+      "endFrame": 123
+    },
+    {
+      "word": "for",
+      "start": 4.106,
+      "end": 4.306,
+      "startFrame": 123,
+      "endFrame": 129
+    },
+    {
+      "word": "you.",
+      "start": 4.306,
+      "end": 4.626,
+      "startFrame": 129,
+      "endFrame": 139
+    }
+  ],
+  "durationSeconds": 4.626,
+  "durationFrames": 139
+}

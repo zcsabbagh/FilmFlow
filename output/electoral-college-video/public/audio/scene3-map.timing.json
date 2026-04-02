@@ -1,0 +1,287 @@
+{
+  "text": "[curious] Here's the thing. In twenty twenty-four, candidates visited just seven states. [pause] Seven out of fifty. [serious] If you live in California, or Texas, or New York [pause] your state was already decided before a single vote was cast.",
+  "words": [
+    {
+      "word": "[curious]",
+      "start": 0,
+      "end": 0.192,
+      "startFrame": 0,
+      "endFrame": 6
+    },
+    {
+      "word": "Here's",
+      "start": 0.192,
+      "end": 0.34,
+      "startFrame": 6,
+      "endFrame": 10
+    },
+    {
+      "word": "the",
+      "start": 0.34,
+      "end": 0.466,
+      "startFrame": 10,
+      "endFrame": 14
+    },
+    {
+      "word": "thing.",
+      "start": 0.466,
+      "end": 1.276,
+      "startFrame": 14,
+      "endFrame": 38
+    },
+    {
+      "word": "In",
+      "start": 1.276,
+      "end": 1.561,
+      "startFrame": 38,
+      "endFrame": 47
+    },
+    {
+      "word": "twenty",
+      "start": 1.561,
+      "end": 1.876,
+      "startFrame": 47,
+      "endFrame": 56
+    },
+    {
+      "word": "twenty-four,",
+      "start": 1.876,
+      "end": 2.996,
+      "startFrame": 56,
+      "endFrame": 90
+    },
+    {
+      "word": "candidates",
+      "start": 2.996,
+      "end": 3.556,
+      "startFrame": 90,
+      "endFrame": 107
+    },
+    {
+      "word": "visited",
+      "start": 3.556,
+      "end": 4.056,
+      "startFrame": 107,
+      "endFrame": 122
+    },
+    {
+      "word": "just",
+      "start": 4.056,
+      "end": 4.469,
+      "startFrame": 122,
+      "endFrame": 134
+    },
+    {
+      "word": "seven",
+      "start": 4.469,
+      "end": 5.059,
+      "startFrame": 134,
+      "endFrame": 152
+    },
+    {
+      "word": "states.",
+      "start": 5.059,
+      "end": 6.709,
+      "startFrame": 152,
+      "endFrame": 201
+    },
+    {
+      "word": "[pause]",
+      "start": 6.709,
+      "end": 7.294,
+      "startFrame": 201,
+      "endFrame": 219
+    },
+    {
+      "word": "Seven",
+      "start": 7.294,
+      "end": 7.524,
+      "startFrame": 219,
+      "endFrame": 226
+    },
+    {
+      "word": "out",
+      "start": 7.524,
+      "end": 7.91,
+      "startFrame": 226,
+      "endFrame": 237
+    },
+    {
+      "word": "of",
+      "start": 7.91,
+      "end": 8.068,
+      "startFrame": 237,
+      "endFrame": 242
+    },
+    {
+      "word": "fifty.",
+      "start": 8.068,
+      "end": 9.168,
+      "startFrame": 242,
+      "endFrame": 275
+    },
+    {
+      "word": "[serious]",
+      "start": 9.168,
+      "end": 9.218,
+      "startFrame": 275,
+      "endFrame": 277
+    },
+    {
+      "word": "If",
+      "start": 9.218,
+      "end": 9.27,
+      "startFrame": 277,
+      "endFrame": 278
+    },
+    {
+      "word": "you",
+      "start": 9.27,
+      "end": 9.422,
+      "startFrame": 278,
+      "endFrame": 283
+    },
+    {
+      "word": "live",
+      "start": 9.422,
+      "end": 9.576,
+      "startFrame": 283,
+      "endFrame": 287
+    },
+    {
+      "word": "in",
+      "start": 9.576,
+      "end": 9.693,
+      "startFrame": 287,
+      "endFrame": 291
+    },
+    {
+      "word": "California,",
+      "start": 9.693,
+      "end": 10.556,
+      "startFrame": 291,
+      "endFrame": 317
+    },
+    {
+      "word": "or",
+      "start": 10.556,
+      "end": 10.782,
+      "startFrame": 317,
+      "endFrame": 323
+    },
+    {
+      "word": "Texas,",
+      "start": 10.782,
+      "end": 11.515,
+      "startFrame": 323,
+      "endFrame": 345
+    },
+    {
+      "word": "or",
+      "start": 11.515,
+      "end": 11.681,
+      "startFrame": 345,
+      "endFrame": 350
+    },
+    {
+      "word": "New",
+      "start": 11.681,
+      "end": 11.941,
+      "startFrame": 350,
+      "endFrame": 358
+    },
+    {
+      "word": "York",
+      "start": 11.941,
+      "end": 12.621,
+      "startFrame": 358,
+      "endFrame": 379
+    },
+    {
+      "word": "[pause]",
+      "start": 12.621,
+      "end": 13.037,
+      "startFrame": 379,
+      "endFrame": 391
+    },
+    {
+      "word": "your",
+      "start": 13.037,
+      "end": 13.11,
+      "startFrame": 391,
+      "endFrame": 393
+    },
+    {
+      "word": "state",
+      "start": 13.11,
+      "end": 13.415,
+      "startFrame": 393,
+      "endFrame": 402
+    },
+    {
+      "word": "was",
+      "start": 13.415,
+      "end": 13.565,
+      "startFrame": 402,
+      "endFrame": 407
+    },
+    {
+      "word": "already",
+      "start": 13.565,
+      "end": 13.855,
+      "startFrame": 407,
+      "endFrame": 416
+    },
+    {
+      "word": "decided",
+      "start": 13.855,
+      "end": 14.449,
+      "startFrame": 416,
+      "endFrame": 433
+    },
+    {
+      "word": "before",
+      "start": 14.449,
+      "end": 14.773,
+      "startFrame": 433,
+      "endFrame": 443
+    },
+    {
+      "word": "a",
+      "start": 14.773,
+      "end": 14.95,
+      "startFrame": 443,
+      "endFrame": 449
+    },
+    {
+      "word": "single",
+      "start": 14.95,
+      "end": 15.372,
+      "startFrame": 449,
+      "endFrame": 461
+    },
+    {
+      "word": "vote",
+      "start": 15.372,
+      "end": 15.732,
+      "startFrame": 461,
+      "endFrame": 472
+    },
+    {
+      "word": "was",
+      "start": 15.732,
+      "end": 15.98,
+      "startFrame": 472,
+      "endFrame": 479
+    },
+    {
+      "word": "cast.",
+      "start": 15.98,
+      "end": 16.492,
+      "startFrame": 479,
+      "endFrame": 495
+    }
+  ],
+  "durationSeconds": 16.492,
+  "durationFrames": 495
+}

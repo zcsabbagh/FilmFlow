@@ -1,0 +1,140 @@
+{
+  "text": "[serious] Designed for four million. [pause] Governing three hundred and thirty million. [pause] Is it time for a change?",
+  "words": [
+    {
+      "word": "[serious]",
+      "start": 0,
+      "end": 0.411,
+      "startFrame": 0,
+      "endFrame": 12
+    },
+    {
+      "word": "Designed",
+      "start": 0.411,
+      "end": 0.607,
+      "startFrame": 12,
+      "endFrame": 18
+    },
+    {
+      "word": "for",
+      "start": 0.607,
+      "end": 0.883,
+      "startFrame": 18,
+      "endFrame": 26
+    },
+    {
+      "word": "four",
+      "start": 0.883,
+      "end": 1.337,
+      "startFrame": 26,
+      "endFrame": 40
+    },
+    {
+      "word": "million.",
+      "start": 1.337,
+      "end": 2.907,
+      "startFrame": 40,
+      "endFrame": 87
+    },
+    {
+      "word": "[pause]",
+      "start": 2.907,
+      "end": 3.378,
+      "startFrame": 87,
+      "endFrame": 101
+    },
+    {
+      "word": "Governing",
+      "start": 3.378,
+      "end": 3.844,
+      "startFrame": 101,
+      "endFrame": 115
+    },
+    {
+      "word": "three",
+      "start": 3.844,
+      "end": 4.434,
+      "startFrame": 115,
+      "endFrame": 133
+    },
+    {
+      "word": "hundred",
+      "start": 4.434,
+      "end": 4.954,
+      "startFrame": 133,
+      "endFrame": 149
+    },
+    {
+      "word": "and",
+      "start": 4.954,
+      "end": 5.311,
+      "startFrame": 149,
+      "endFrame": 159
+    },
+    {
+      "word": "thirty",
+      "start": 5.311,
+      "end": 5.763,
+      "startFrame": 159,
+      "endFrame": 173
+    },
+    {
+      "word": "million.",
+      "start": 5.763,
+      "end": 7.913,
+      "startFrame": 173,
+      "endFrame": 237
+    },
+    {
+      "word": "[pause]",
+      "start": 7.913,
+      "end": 8.432,
+      "startFrame": 237,
+      "endFrame": 253
+    },
+    {
+      "word": "Is",
+      "start": 8.432,
+      "end": 8.474,
+      "startFrame": 253,
+      "endFrame": 254
+    },
+    {
+      "word": "it",
+      "start": 8.474,
+      "end": 8.606,
+      "startFrame": 254,
+      "endFrame": 258
+    },
+    {
+      "word": "time",
+      "start": 8.606,
+      "end": 8.966,
+      "startFrame": 258,
+      "endFrame": 269
+    },
+    {
+      "word": "for",
+      "start": 8.966,
+      "end": 9.126,
+      "startFrame": 269,
+      "endFrame": 274
+    },
+    {
+      "word": "a",
+      "start": 9.126,
+      "end": 9.268,
+      "startFrame": 274,
+      "endFrame": 278
+    },
+    {
+      "word": "change?",
+      "start": 9.268,
+      "end": 10.04,
+      "startFrame": 278,
+      "endFrame": 301
+    }
+  ],
+  "durationSeconds": 10.04,
+  "durationFrames": 302
+}

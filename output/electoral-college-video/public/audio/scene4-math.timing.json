@@ -1,0 +1,210 @@
+{
+  "text": "[curious] And it gets stranger. A voter in Wyoming has three-point-six times the electoral power of a voter in California. [pause] [serious] Same country. Same election. Very different math.",
+  "words": [
+    {
+      "word": "[curious]",
+      "start": 0,
+      "end": 0.13,
+      "startFrame": 0,
+      "endFrame": 4
+    },
+    {
+      "word": "And",
+      "start": 0.13,
+      "end": 0.186,
+      "startFrame": 4,
+      "endFrame": 6
+    },
+    {
+      "word": "it",
+      "start": 0.186,
+      "end": 0.302,
+      "startFrame": 6,
+      "endFrame": 9
+    },
+    {
+      "word": "gets",
+      "start": 0.302,
+      "end": 0.629,
+      "startFrame": 9,
+      "endFrame": 19
+    },
+    {
+      "word": "stranger.",
+      "start": 0.629,
+      "end": 1.557,
+      "startFrame": 19,
+      "endFrame": 47
+    },
+    {
+      "word": "A",
+      "start": 1.557,
+      "end": 1.903,
+      "startFrame": 47,
+      "endFrame": 57
+    },
+    {
+      "word": "voter",
+      "start": 1.903,
+      "end": 2.286,
+      "startFrame": 57,
+      "endFrame": 69
+    },
+    {
+      "word": "in",
+      "start": 2.286,
+      "end": 2.472,
+      "startFrame": 69,
+      "endFrame": 74
+    },
+    {
+      "word": "Wyoming",
+      "start": 2.472,
+      "end": 3.132,
+      "startFrame": 74,
+      "endFrame": 94
+    },
+    {
+      "word": "has",
+      "start": 3.132,
+      "end": 3.498,
+      "startFrame": 94,
+      "endFrame": 105
+    },
+    {
+      "word": "three-point-six",
+      "start": 3.498,
+      "end": 4.866,
+      "startFrame": 105,
+      "endFrame": 146
+    },
+    {
+      "word": "times",
+      "start": 4.866,
+      "end": 5.326,
+      "startFrame": 146,
+      "endFrame": 160
+    },
+    {
+      "word": "the",
+      "start": 5.326,
+      "end": 5.554,
+      "startFrame": 160,
+      "endFrame": 167
+    },
+    {
+      "word": "electoral",
+      "start": 5.554,
+      "end": 6.052,
+      "startFrame": 167,
+      "endFrame": 182
+    },
+    {
+      "word": "power",
+      "start": 6.052,
+      "end": 6.515,
+      "startFrame": 182,
+      "endFrame": 195
+    },
+    {
+      "word": "of",
+      "start": 6.515,
+      "end": 6.821,
+      "startFrame": 195,
+      "endFrame": 205
+    },
+    {
+      "word": "a",
+      "start": 6.821,
+      "end": 6.941,
+      "startFrame": 205,
+      "endFrame": 208
+    },
+    {
+      "word": "voter",
+      "start": 6.941,
+      "end": 7.394,
+      "startFrame": 208,
+      "endFrame": 222
+    },
+    {
+      "word": "in",
+      "start": 7.394,
+      "end": 7.565,
+      "startFrame": 222,
+      "endFrame": 227
+    },
+    {
+      "word": "California.",
+      "start": 7.565,
+      "end": 9.095,
+      "startFrame": 227,
+      "endFrame": 273
+    },
+    {
+      "word": "[pause]",
+      "start": 9.095,
+      "end": 9.945,
+      "startFrame": 273,
+      "endFrame": 298
+    },
+    {
+      "word": "[serious]",
+      "start": 9.945,
+      "end": 10.065,
+      "startFrame": 298,
+      "endFrame": 302
+    },
+    {
+      "word": "Same",
+      "start": 10.065,
+      "end": 10.209,
+      "startFrame": 302,
+      "endFrame": 306
+    },
+    {
+      "word": "country.",
+      "start": 10.209,
+      "end": 11.057,
+      "startFrame": 306,
+      "endFrame": 332
+    },
+    {
+      "word": "Same",
+      "start": 11.057,
+      "end": 11.311,
+      "startFrame": 332,
+      "endFrame": 339
+    },
+    {
+      "word": "election.",
+      "start": 11.311,
+      "end": 12.047,
+      "startFrame": 339,
+      "endFrame": 361
+    },
+    {
+      "word": "Very",
+      "start": 12.047,
+      "end": 12.727,
+      "startFrame": 361,
+      "endFrame": 382
+    },
+    {
+      "word": "different",
+      "start": 12.727,
+      "end": 13.167,
+      "startFrame": 382,
+      "endFrame": 395
+    },
+    {
+      "word": "math.",
+      "start": 13.167,
+      "end": 13.647,
+      "startFrame": 395,
+      "endFrame": 409
+    }
+  ],
+  "durationSeconds": 13.647,
+  "durationFrames": 410
+}

@@ -1,0 +1,196 @@
+{
+  "text": "[serious] Five times in American history, the popular vote winner [pause] lost the presidency. [pause] Eighteen twenty-four. Eighteen seventy-six. Eighteen eighty-eight. Two thousand. [sighs] And twenty sixteen.",
+  "words": [
+    {
+      "word": "[serious]",
+      "start": 0,
+      "end": 0.253,
+      "startFrame": 0,
+      "endFrame": 8
+    },
+    {
+      "word": "Five",
+      "start": 0.253,
+      "end": 0.397,
+      "startFrame": 8,
+      "endFrame": 12
+    },
+    {
+      "word": "times",
+      "start": 0.397,
+      "end": 0.823,
+      "startFrame": 12,
+      "endFrame": 25
+    },
+    {
+      "word": "in",
+      "start": 0.823,
+      "end": 0.928,
+      "startFrame": 25,
+      "endFrame": 28
+    },
+    {
+      "word": "American",
+      "start": 0.928,
+      "end": 1.402,
+      "startFrame": 28,
+      "endFrame": 42
+    },
+    {
+      "word": "history,",
+      "start": 1.402,
+      "end": 2.252,
+      "startFrame": 42,
+      "endFrame": 68
+    },
+    {
+      "word": "the",
+      "start": 2.252,
+      "end": 2.372,
+      "startFrame": 68,
+      "endFrame": 71
+    },
+    {
+      "word": "popular",
+      "start": 2.372,
+      "end": 2.84,
+      "startFrame": 71,
+      "endFrame": 85
+    },
+    {
+      "word": "vote",
+      "start": 2.84,
+      "end": 3.077,
+      "startFrame": 85,
+      "endFrame": 92
+    },
+    {
+      "word": "winner",
+      "start": 3.077,
+      "end": 3.667,
+      "startFrame": 92,
+      "endFrame": 110
+    },
+    {
+      "word": "[pause]",
+      "start": 3.667,
+      "end": 4.276,
+      "startFrame": 110,
+      "endFrame": 128
+    },
+    {
+      "word": "lost",
+      "start": 4.276,
+      "end": 4.42,
+      "startFrame": 128,
+      "endFrame": 133
+    },
+    {
+      "word": "the",
+      "start": 4.42,
+      "end": 4.598,
+      "startFrame": 133,
+      "endFrame": 138
+    },
+    {
+      "word": "presidency.",
+      "start": 4.598,
+      "end": 5.858,
+      "startFrame": 138,
+      "endFrame": 176
+    },
+    {
+      "word": "[pause]",
+      "start": 5.858,
+      "end": 6.631,
+      "startFrame": 176,
+      "endFrame": 199
+    },
+    {
+      "word": "Eighteen",
+      "start": 6.631,
+      "end": 6.819,
+      "startFrame": 199,
+      "endFrame": 205
+    },
+    {
+      "word": "twenty-four.",
+      "start": 6.819,
+      "end": 7.995,
+      "startFrame": 205,
+      "endFrame": 240
+    },
+    {
+      "word": "Eighteen",
+      "start": 7.995,
+      "end": 8.253,
+      "startFrame": 240,
+      "endFrame": 248
+    },
+    {
+      "word": "seventy-six.",
+      "start": 8.253,
+      "end": 9.523,
+      "startFrame": 248,
+      "endFrame": 286
+    },
+    {
+      "word": "Eighteen",
+      "start": 9.523,
+      "end": 9.846,
+      "startFrame": 286,
+      "endFrame": 295
+    },
+    {
+      "word": "eighty-eight.",
+      "start": 9.846,
+      "end": 10.954,
+      "startFrame": 295,
+      "endFrame": 329
+    },
+    {
+      "word": "Two",
+      "start": 10.954,
+      "end": 11.154,
+      "startFrame": 329,
+      "endFrame": 335
+    },
+    {
+      "word": "thousand.",
+      "start": 11.154,
+      "end": 12.714,
+      "startFrame": 335,
+      "endFrame": 381
+    },
+    {
+      "word": "[sighs]",
+      "start": 12.714,
+      "end": 13.172,
+      "startFrame": 381,
+      "endFrame": 395
+    },
+    {
+      "word": "And",
+      "start": 13.172,
+      "end": 13.289,
+      "startFrame": 395,
+      "endFrame": 399
+    },
+    {
+      "word": "twenty",
+      "start": 13.289,
+      "end": 13.711,
+      "startFrame": 399,
+      "endFrame": 411
+    },
+    {
+      "word": "sixteen.",
+      "start": 13.711,
+      "end": 14.431,
+      "startFrame": 411,
+      "endFrame": 433
+    }
+  ],
+  "durationSeconds": 14.431,
+  "durationFrames": 433
+}
