@@ -1,17 +1,20 @@
 import { Composition, Sequence } from "remotion";
 import { tokens } from "./tokens";
-import { Scene as Scene01 } from "./scenes/Scene01-Hook";
-import { Scene as Scene02 } from "./scenes/Scene02-History";
-import { Scene as Scene03 } from "./scenes/Scene03-Data";
-import { Scene as Scene04 } from "./scenes/Scene04-International";
-import { Scene as Scene05 } from "./scenes/Scene05-Close";
+import { Scene as Intro } from "./scenes/Scene01-Intro";
+import { Scene as Interview } from "./scenes/Scene02-Interview";
+import { Scene as Stats } from "./scenes/Scene03-Stats";
+import { Scene as History } from "./scenes/Scene04-History";
+import { Scene as Countries } from "./scenes/Scene05-Countries";
+import { Scene as Close } from "./scenes/Scene06-Close";
 
+// Punchy structure: intro → interview → stats → history → comparison → close
 const SCENES = [
-  { component: Scene01, frames: 547 + 30 },   // 18.2s British v3
-  { component: Scene02, frames: 777 + 30 },   // 25.9s
-  { component: Scene03, frames: 625 + 30 },   // 20.8s
-  { component: Scene04, frames: 657 + 30 },   // 21.9s
-  { component: Scene05, frames: 432 + 30 },   // 14.4s
+  { component: Intro, frames: 150 },         // 5s intro montage
+  { component: Interview, frames: 300 },     // 10s interview clip
+  { component: Stats, frames: 381 + 30 },    // 12.7s stats
+  { component: History, frames: 468 + 30 },  // 15.6s pension history
+  { component: Countries, frames: 348 + 30 },// 11.6s country comparison
+  { component: Close, frames: 279 + 30 },    // 9.3s close
 ];
 
 const TOTAL = SCENES.reduce((s, sc) => s + sc.frames, 0);
